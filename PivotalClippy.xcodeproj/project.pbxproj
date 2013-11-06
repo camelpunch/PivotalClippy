@@ -17,7 +17,9 @@
 		49524108182A3017003F7F91 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49524107182A3017003F7F91 /* XCTest.framework */; };
 		49524109182A3017003F7F91 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495240E8182A3017003F7F91 /* Cocoa.framework */; };
 		49524111182A3017003F7F91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4952410F182A3017003F7F91 /* InfoPlist.strings */; };
-		49524113182A3017003F7F91 /* PivotalClippyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49524112182A3017003F7F91 /* PivotalClippyTests.m */; };
+		49524113182A3017003F7F91 /* PreferencesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49524112182A3017003F7F91 /* PreferencesTest.m */; };
+		4952411F182A313D003F7F91 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4952411E182A313D003F7F91 /* Preferences.m */; };
+		49524120182A313D003F7F91 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4952411E182A313D003F7F91 /* Preferences.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +51,9 @@
 		49524107182A3017003F7F91 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4952410E182A3017003F7F91 /* PivotalClippyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PivotalClippyTests-Info.plist"; sourceTree = "<group>"; };
 		49524110182A3017003F7F91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		49524112182A3017003F7F91 /* PivotalClippyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PivotalClippyTests.m; sourceTree = "<group>"; };
+		49524112182A3017003F7F91 /* PreferencesTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencesTest.m; sourceTree = "<group>"; };
+		4952411D182A313D003F7F91 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		4952411E182A313D003F7F91 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		495240EE182A3017003F7F91 /* PivotalClippy */ = {
 			isa = PBXGroup;
 			children = (
+				4952411C182A3116003F7F91 /* Domain */,
 				495240FA182A3017003F7F91 /* AppDelegate.h */,
 				495240FB182A3017003F7F91 /* AppDelegate.m */,
 				495240FD182A3017003F7F91 /* MainMenu.xib */,
@@ -139,7 +144,7 @@
 		4952410C182A3017003F7F91 /* PivotalClippyTests */ = {
 			isa = PBXGroup;
 			children = (
-				49524112182A3017003F7F91 /* PivotalClippyTests.m */,
+				49524112182A3017003F7F91 /* PreferencesTest.m */,
 				4952410D182A3017003F7F91 /* Supporting Files */,
 			);
 			path = PivotalClippyTests;
@@ -153,6 +158,16 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		4952411C182A3116003F7F91 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				4952411D182A313D003F7F91 /* Preferences.h */,
+				4952411E182A313D003F7F91 /* Preferences.m */,
+			);
+			name = Domain;
+			path = PivotalClippy/Domain;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -254,6 +269,7 @@
 			files = (
 				495240FC182A3017003F7F91 /* AppDelegate.m in Sources */,
 				495240F5182A3017003F7F91 /* main.m in Sources */,
+				4952411F182A313D003F7F91 /* Preferences.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +277,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49524113182A3017003F7F91 /* PivotalClippyTests.m in Sources */,
+				49524120182A313D003F7F91 /* Preferences.m in Sources */,
+				49524113182A3017003F7F91 /* PreferencesTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
