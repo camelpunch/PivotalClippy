@@ -1,7 +1,7 @@
-#import <XCTest/XCTest.h>
+#import "ValueSemantics.h"
 #import "Preferences.h"
 
-@interface PreferencesTest : XCTestCase
+@interface PreferencesTest : XCTestCase <ValueSemantics>
 @end
 
 @implementation PreferencesTest {

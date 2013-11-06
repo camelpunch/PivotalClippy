@@ -20,6 +20,9 @@
 		49524113182A3017003F7F91 /* PreferencesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49524112182A3017003F7F91 /* PreferencesTest.m */; };
 		4952411F182A313D003F7F91 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4952411E182A313D003F7F91 /* Preferences.m */; };
 		49524120182A313D003F7F91 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4952411E182A313D003F7F91 /* Preferences.m */; };
+		49524122182A9AD7003F7F91 /* StoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49524121182A9AD7003F7F91 /* StoryTest.m */; };
+		49524126182A9C41003F7F91 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = 49524125182A9C41003F7F91 /* Story.m */; };
+		49524127182A9C41003F7F91 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = 49524125182A9C41003F7F91 /* Story.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,10 @@
 		49524112182A3017003F7F91 /* PreferencesTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencesTest.m; sourceTree = "<group>"; };
 		4952411D182A313D003F7F91 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
 		4952411E182A313D003F7F91 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
+		49524121182A9AD7003F7F91 /* StoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTest.m; sourceTree = "<group>"; };
+		49524123182A9B7C003F7F91 /* ValueSemantics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ValueSemantics.h; sourceTree = "<group>"; };
+		49524124182A9C41003F7F91 /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Story.h; sourceTree = "<group>"; };
+		49524125182A9C41003F7F91 /* Story.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Story.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +151,9 @@
 		4952410C182A3017003F7F91 /* PivotalClippyTests */ = {
 			isa = PBXGroup;
 			children = (
+				49524123182A9B7C003F7F91 /* ValueSemantics.h */,
 				49524112182A3017003F7F91 /* PreferencesTest.m */,
+				49524121182A9AD7003F7F91 /* StoryTest.m */,
 				4952410D182A3017003F7F91 /* Supporting Files */,
 			);
 			path = PivotalClippyTests;
@@ -164,6 +173,8 @@
 			children = (
 				4952411D182A313D003F7F91 /* Preferences.h */,
 				4952411E182A313D003F7F91 /* Preferences.m */,
+				49524124182A9C41003F7F91 /* Story.h */,
+				49524125182A9C41003F7F91 /* Story.m */,
 			);
 			name = Domain;
 			path = PivotalClippy/Domain;
@@ -270,6 +281,7 @@
 				495240FC182A3017003F7F91 /* AppDelegate.m in Sources */,
 				495240F5182A3017003F7F91 /* main.m in Sources */,
 				4952411F182A313D003F7F91 /* Preferences.m in Sources */,
+				49524126182A9C41003F7F91 /* Story.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +291,8 @@
 			files = (
 				49524120182A313D003F7F91 /* Preferences.m in Sources */,
 				49524113182A3017003F7F91 /* PreferencesTest.m in Sources */,
+				49524122182A9AD7003F7F91 /* StoryTest.m in Sources */,
+				49524127182A9C41003F7F91 /* Story.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
