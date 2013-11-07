@@ -2,7 +2,6 @@
 #import <OCMock/OCMock.h>
 #import "Repository.h"
 #import "PreferencesController.h"
-#import "PreferencesBuilder.h"
 #import "Preferences.h"
 
 @interface PreferencesControllerTest : XCTestCase
@@ -10,9 +9,8 @@
 
 @implementation PreferencesControllerTest {
     PreferencesController *controller;
-    id repo;
-    PreferencesBuilder *builder;
     Preferences *prefs;
+    id repo;
 }
 
 - (void)testFetchesPreviouslyStoredPreferences
@@ -47,31 +45,41 @@
     controller = [[PreferencesController alloc] initWithRepository:repo];
     [controller loadWindow];
 
-    builder = [[PreferencesBuilder alloc] init];
-    builder.username = @"myusername";
-    builder.token = @"";
-    builder.projectID = @"";
+    prefs = [[Preferences alloc] initWithUsername:@"myusername"
+                                            token:@"mytoken"
+                                        projectID:@"123123"];
 
     controller.username.stringValue = @"myusername";
+    controller.token.stringValue = @"mytoken";
+    controller.projectID.stringValue = @"123123";
 
-    [[repo expect] put:[builder build]];
+    [[repo expect] put:prefs];
     [controller usernameDidBlur:nil];
     [repo verify];
 
-    builder.token = @"mytoken";
-
-    controller.token.stringValue = @"mytoken";
-
-    [[repo expect] put:[builder build]];
+    [[repo expect] put:prefs];
     [controller tokenDidBlur:nil];
     [repo verify];
 
-    builder.projectID = @"123123";
-
-    controller.projectID.stringValue = @"123123";
-
-    [[repo expect] put:[builder build]];
+    [[repo expect] put:prefs];
     [controller projectIDDidBlur:nil];
+    [repo verify];
+}
+
+- (void)testStoresPreferencesWhenWindowCloses
+{
+    repo = [OCMockObject mockForProtocol:@protocol(Repository)];
+    controller = [[PreferencesController alloc] initWithRepository:repo];
+    [controller loadWindow];
+
+    controller.username.stringValue = @"myusername";
+    controller.token.stringValue = @"mytoken";
+    controller.projectID.stringValue = @"567567";
+
+    [[repo expect] put:[[Preferences alloc] initWithUsername:@"myusername"
+                                                       token:@"mytoken"
+                                                   projectID:@"567567"]];
+    [controller windowWillClose:nil];
     [repo verify];
 }
 
