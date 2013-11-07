@@ -9,6 +9,8 @@
     Preferences *b;
 }
 
+#pragma mark - <ValueSemantics>
+
 - (void)testEqualWithSameProperties
 {
     a = [[Preferences alloc] initWithUsername:@"abc"

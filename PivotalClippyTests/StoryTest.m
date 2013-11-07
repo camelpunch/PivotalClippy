@@ -9,6 +9,8 @@
     Story *b;
 }
 
+#pragma mark - <ValueSemantics>
+
 - (void)testEqualWithSameProperties
 {
     a = [[Story alloc] initWithStoryID:@123
