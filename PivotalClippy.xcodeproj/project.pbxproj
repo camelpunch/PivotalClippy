@@ -21,6 +21,13 @@
 		49524120182A313D003F7F91 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4952411E182A313D003F7F91 /* Preferences.m */; };
 		49524126182A9C41003F7F91 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = 49524125182A9C41003F7F91 /* Story.m */; };
 		49524127182A9C41003F7F91 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = 49524125182A9C41003F7F91 /* Story.m */; };
+		4967A4D7182B4A3600A7C32F /* PreferencesControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A4D6182B4A3600A7C32F /* PreferencesControllerTest.m */; };
+		4967A4EA182B4BED00A7C32F /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A4E9182B4BED00A7C32F /* OCMock.framework */; };
+		4967A4EE182B4C8E00A7C32F /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A4EC182B4C8E00A7C32F /* PreferencesController.m */; };
+		4967A4EF182B4C8E00A7C32F /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A4EC182B4C8E00A7C32F /* PreferencesController.m */; };
+		4967A4F3182B4CE400A7C32F /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4967A4F2182B4CE400A7C32F /* PreferencesController.xib */; };
+		4967A4F4182B4CE400A7C32F /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4967A4F2182B4CE400A7C32F /* PreferencesController.xib */; };
+		4967A4F7182B4FFA00A7C32F /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4967A4E9182B4BED00A7C32F /* OCMock.framework */; };
 		49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23F9182B3A6700147805 /* PreferencesTest.m */; };
 		49DF23FD182B3A6700147805 /* StoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23FA182B3A6700147805 /* StoryTest.m */; };
 /* End PBXBuildFile section */
@@ -34,6 +41,19 @@
 			remoteInfo = PivotalClippy;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4967A4F6182B4FD200A7C32F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				4967A4F7182B4FFA00A7C32F /* OCMock.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		495240E5182A3017003F7F91 /* PivotalClippy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PivotalClippy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +78,12 @@
 		4952411E182A313D003F7F91 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
 		49524124182A9C41003F7F91 /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Story.h; sourceTree = "<group>"; };
 		49524125182A9C41003F7F91 /* Story.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Story.m; sourceTree = "<group>"; };
+		4967A4D6182B4A3600A7C32F /* PreferencesControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreferencesControllerTest.m; path = Controllers/PreferencesControllerTest.m; sourceTree = "<group>"; };
+		4967A4E8182B4ADA00A7C32F /* Repository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
+		4967A4E9182B4BED00A7C32F /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
+		4967A4EB182B4C8E00A7C32F /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
+		4967A4EC182B4C8E00A7C32F /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		4967A4F2182B4CE400A7C32F /* PreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
 		49DF23F9182B3A6700147805 /* PreferencesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesTest.m; sourceTree = "<group>"; };
 		49DF23FA182B3A6700147805 /* StoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTest.m; sourceTree = "<group>"; };
 		49DF23FB182B3A6700147805 /* ValueSemantics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueSemantics.h; sourceTree = "<group>"; };
@@ -78,6 +104,7 @@
 			files = (
 				49524109182A3017003F7F91 /* Cocoa.framework in Frameworks */,
 				49524108182A3017003F7F91 /* XCTest.framework in Frameworks */,
+				4967A4EA182B4BED00A7C32F /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +133,7 @@
 		495240E7182A3017003F7F91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4967A4E9182B4BED00A7C32F /* OCMock.framework */,
 				495240E8182A3017003F7F91 /* Cocoa.framework */,
 				49524107182A3017003F7F91 /* XCTest.framework */,
 				495240EA182A3017003F7F91 /* Other Frameworks */,
@@ -126,6 +154,8 @@
 		495240EE182A3017003F7F91 /* PivotalClippy */ = {
 			isa = PBXGroup;
 			children = (
+				4967A4E0182B4AA800A7C32F /* Adapters */,
+				4967A4D8182B4A7400A7C32F /* Controllers */,
 				4952411C182A3116003F7F91 /* Domain */,
 				495240FA182A3017003F7F91 /* AppDelegate.h */,
 				495240FB182A3017003F7F91 /* AppDelegate.m */,
@@ -179,9 +209,29 @@
 			path = PivotalClippy/Domain;
 			sourceTree = SOURCE_ROOT;
 		};
+		4967A4D8182B4A7400A7C32F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4967A4EB182B4C8E00A7C32F /* PreferencesController.h */,
+				4967A4EC182B4C8E00A7C32F /* PreferencesController.m */,
+				4967A4F2182B4CE400A7C32F /* PreferencesController.xib */,
+			);
+			name = Controllers;
+			path = ../Controllers;
+			sourceTree = "<group>";
+		};
+		4967A4E0182B4AA800A7C32F /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				4967A4E8182B4ADA00A7C32F /* Repository.h */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
 		49DF23F7182B39DA00147805 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4967A4D6182B4A3600A7C32F /* PreferencesControllerTest.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -223,6 +273,7 @@
 				49524102182A3017003F7F91 /* Sources */,
 				49524103182A3017003F7F91 /* Frameworks */,
 				49524104182A3017003F7F91 /* Resources */,
+				4967A4F6182B4FD200A7C32F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -272,6 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4967A4F3182B4CE400A7C32F /* PreferencesController.xib in Resources */,
 				495240F3182A3017003F7F91 /* InfoPlist.strings in Resources */,
 				49524101182A3017003F7F91 /* Images.xcassets in Resources */,
 				495240F9182A3017003F7F91 /* Credits.rtf in Resources */,
@@ -283,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4967A4F4182B4CE400A7C32F /* PreferencesController.xib in Resources */,
 				49524111182A3017003F7F91 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4967A4EE182B4C8E00A7C32F /* PreferencesController.m in Sources */,
 				495240FC182A3017003F7F91 /* AppDelegate.m in Sources */,
 				495240F5182A3017003F7F91 /* main.m in Sources */,
 				4952411F182A313D003F7F91 /* Preferences.m in Sources */,
@@ -305,7 +359,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4967A4EF182B4C8E00A7C32F /* PreferencesController.m in Sources */,
 				49524120182A313D003F7F91 /* Preferences.m in Sources */,
+				4967A4D7182B4A3600A7C32F /* PreferencesControllerTest.m in Sources */,
 				49524127182A9C41003F7F91 /* Story.m in Sources */,
 				49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */,
 				49DF23FD182B3A6700147805 /* StoryTest.m in Sources */,
@@ -460,6 +516,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					/Users/andrew/workspace/PivotalClippy,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PivotalClippy/PivotalClippy-Prefix.pch";
@@ -482,6 +539,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					/Users/andrew/workspace/PivotalClippy,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PivotalClippy/PivotalClippy-Prefix.pch";
