@@ -28,6 +28,7 @@
 		4967A4F3182B4CE400A7C32F /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4967A4F2182B4CE400A7C32F /* PreferencesController.xib */; };
 		4967A4F4182B4CE400A7C32F /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4967A4F2182B4CE400A7C32F /* PreferencesController.xib */; };
 		4967A4F7182B4FFA00A7C32F /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4967A4E9182B4BED00A7C32F /* OCMock.framework */; };
+		4967A514182B58E700A7C32F /* PreferencesBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A513182B58E700A7C32F /* PreferencesBuilder.m */; };
 		49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23F9182B3A6700147805 /* PreferencesTest.m */; };
 		49DF23FD182B3A6700147805 /* StoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23FA182B3A6700147805 /* StoryTest.m */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,9 @@
 		4967A4EB182B4C8E00A7C32F /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		4967A4EC182B4C8E00A7C32F /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		4967A4F2182B4CE400A7C32F /* PreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
+		4967A512182B58E700A7C32F /* PreferencesBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesBuilder.h; sourceTree = "<group>"; };
+		4967A513182B58E700A7C32F /* PreferencesBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesBuilder.m; sourceTree = "<group>"; };
+		4967A516182B5BAA00A7C32F /* Builder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Builder.h; sourceTree = "<group>"; };
 		49DF23F9182B3A6700147805 /* PreferencesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesTest.m; sourceTree = "<group>"; };
 		49DF23FA182B3A6700147805 /* StoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTest.m; sourceTree = "<group>"; };
 		49DF23FB182B3A6700147805 /* ValueSemantics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueSemantics.h; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 		4952410C182A3017003F7F91 /* PivotalClippyTests */ = {
 			isa = PBXGroup;
 			children = (
+				4967A511182B587A00A7C32F /* Builders */,
 				49DF23F8182B39DD00147805 /* Values */,
 				49DF23F7182B39DA00147805 /* Controllers */,
 				4952410D182A3017003F7F91 /* Supporting Files */,
@@ -226,6 +231,16 @@
 				4967A4E8182B4ADA00A7C32F /* Repository.h */,
 			);
 			path = Adapters;
+			sourceTree = "<group>";
+		};
+		4967A511182B587A00A7C32F /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				4967A512182B58E700A7C32F /* PreferencesBuilder.h */,
+				4967A513182B58E700A7C32F /* PreferencesBuilder.m */,
+				4967A516182B5BAA00A7C32F /* Builder.h */,
+			);
+			path = Builders;
 			sourceTree = "<group>";
 		};
 		49DF23F7182B39DA00147805 /* Controllers */ = {
@@ -360,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4967A4EF182B4C8E00A7C32F /* PreferencesController.m in Sources */,
+				4967A514182B58E700A7C32F /* PreferencesBuilder.m in Sources */,
 				49524120182A313D003F7F91 /* Preferences.m in Sources */,
 				4967A4D7182B4A3600A7C32F /* PreferencesControllerTest.m in Sources */,
 				49524127182A9C41003F7F91 /* Story.m in Sources */,
