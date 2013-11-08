@@ -39,6 +39,7 @@
 		4967A565182CB81C00A7C32F /* Copier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A563182CB81C00A7C32F /* Copier.m */; };
 		4967A568182CB8B300A7C32F /* Notifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A567182CB8B300A7C32F /* Notifier.m */; };
 		4967A56A182CB92600A7C32F /* CopierTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A569182CB92600A7C32F /* CopierTest.m */; };
+		4967A56C182CBDAA00A7C32F /* KeyDetectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A56B182CBDAA00A7C32F /* KeyDetectorTest.m */; };
 		49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23F9182B3A6700147805 /* PreferencesTest.m */; };
 		49DF23FD182B3A6700147805 /* StoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23FA182B3A6700147805 /* StoryTest.m */; };
 /* End PBXBuildFile section */
@@ -119,6 +120,7 @@
 		4967A566182CB8B300A7C32F /* Notifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifier.h; sourceTree = "<group>"; };
 		4967A567182CB8B300A7C32F /* Notifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notifier.m; sourceTree = "<group>"; };
 		4967A569182CB92600A7C32F /* CopierTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopierTest.m; sourceTree = "<group>"; };
+		4967A56B182CBDAA00A7C32F /* KeyDetectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyDetectorTest.m; sourceTree = "<group>"; };
 		49DF23F9182B3A6700147805 /* PreferencesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesTest.m; sourceTree = "<group>"; };
 		49DF23FA182B3A6700147805 /* StoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTest.m; sourceTree = "<group>"; };
 		49DF23FB182B3A6700147805 /* ValueSemantics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueSemantics.h; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				4967A558182CB6B900A7C32F /* BacklogTest.m */,
 				4967A569182CB92600A7C32F /* CopierTest.m */,
 				4967A557182CB6B900A7C32F /* PreferencesRepositoryTest.m */,
+				4967A56B182CBDAA00A7C32F /* KeyDetectorTest.m */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				4967A55A182CB6B900A7C32F /* BacklogTest.m in Sources */,
 				4967A547182CA59800A7C32F /* NSNumber+TimeExpiry.m in Sources */,
 				4967A55C182CB6E700A7C32F /* PreferencesControllerTest.m in Sources */,
+				4967A56C182CBDAA00A7C32F /* KeyDetectorTest.m in Sources */,
 				49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */,
 				4967A54A182CA6DD00A7C32F /* PollingDelegate.m in Sources */,
 				49DF23FD182B3A6700147805 /* StoryTest.m in Sources */,
