@@ -30,6 +30,10 @@
 		4967A536182B7FFC00A7C32F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A534182B7FE800A7C32F /* Security.framework */; };
 		4967A547182CA59800A7C32F /* NSNumber+TimeExpiry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A546182CA59800A7C32F /* NSNumber+TimeExpiry.m */; };
 		4967A54A182CA6DD00A7C32F /* PollingDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A549182CA6DD00A7C32F /* PollingDelegate.m */; };
+		4967A54C182CAA3800A7C32F /* PreferencesRepositoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A54B182CAA3800A7C32F /* PreferencesRepositoryTest.m */; };
+		4967A54F182CAB0C00A7C32F /* PreferencesRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A54E182CAB0C00A7C32F /* PreferencesRepository.m */; };
+		4967A555182CAB9400A7C32F /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A552182CAB9400A7C32F /* SSKeychain.m */; };
+		4967A556182CAB9400A7C32F /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A554182CAB9400A7C32F /* SSKeychainQuery.m */; };
 		49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23F9182B3A6700147805 /* PreferencesTest.m */; };
 		49DF23FD182B3A6700147805 /* StoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23FA182B3A6700147805 /* StoryTest.m */; };
 /* End PBXBuildFile section */
@@ -94,6 +98,13 @@
 		4967A546182CA59800A7C32F /* NSNumber+TimeExpiry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+TimeExpiry.m"; sourceTree = "<group>"; };
 		4967A548182CA6DD00A7C32F /* PollingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollingDelegate.h; sourceTree = "<group>"; };
 		4967A549182CA6DD00A7C32F /* PollingDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollingDelegate.m; sourceTree = "<group>"; };
+		4967A54B182CAA3800A7C32F /* PreferencesRepositoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreferencesRepositoryTest.m; path = Adapters/PreferencesRepositoryTest.m; sourceTree = "<group>"; };
+		4967A54D182CAB0C00A7C32F /* PreferencesRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesRepository.h; sourceTree = "<group>"; };
+		4967A54E182CAB0C00A7C32F /* PreferencesRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesRepository.m; sourceTree = "<group>"; };
+		4967A551182CAB9400A7C32F /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		4967A552182CAB9400A7C32F /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		4967A553182CAB9400A7C32F /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		4967A554182CAB9400A7C32F /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		49DF23F9182B3A6700147805 /* PreferencesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesTest.m; sourceTree = "<group>"; };
 		49DF23FA182B3A6700147805 /* StoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTest.m; sourceTree = "<group>"; };
 		49DF23FB182B3A6700147805 /* ValueSemantics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueSemantics.h; sourceTree = "<group>"; };
@@ -167,6 +178,7 @@
 		495240EE182A3017003F7F91 /* PivotalClippy */ = {
 			isa = PBXGroup;
 			children = (
+				4967A550182CAB4800A7C32F /* Library */,
 				4967A4E0182B4AA800A7C32F /* Adapters */,
 				4967A4D8182B4A7400A7C32F /* Controllers */,
 				4952411C182A3116003F7F91 /* Domain */,
@@ -240,6 +252,8 @@
 			children = (
 				4967A51F182B7E2A00A7C32F /* Backlog.h */,
 				4967A520182B7E2A00A7C32F /* Backlog.m */,
+				4967A54D182CAB0C00A7C32F /* PreferencesRepository.h */,
+				4967A54E182CAB0C00A7C32F /* PreferencesRepository.m */,
 				4967A4E8182B4ADA00A7C32F /* Repository.h */,
 			);
 			path = Adapters;
@@ -249,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				4967A518182B787500A7C32F /* BacklogTest.m */,
+				4967A54B182CAA3800A7C32F /* PreferencesRepositoryTest.m */,
 			);
 			name = Adapters;
 			sourceTree = "<group>";
@@ -262,6 +277,17 @@
 				4967A549182CA6DD00A7C32F /* PollingDelegate.m */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4967A550182CAB4800A7C32F /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				4967A551182CAB9400A7C32F /* SSKeychain.h */,
+				4967A552182CAB9400A7C32F /* SSKeychain.m */,
+				4967A553182CAB9400A7C32F /* SSKeychainQuery.h */,
+				4967A554182CAB9400A7C32F /* SSKeychainQuery.m */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		49DF23F7182B39DA00147805 /* Controllers */ = {
@@ -383,11 +409,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4967A4EE182B4C8E00A7C32F /* PreferencesController.m in Sources */,
+				4967A556182CAB9400A7C32F /* SSKeychainQuery.m in Sources */,
+				4967A555182CAB9400A7C32F /* SSKeychain.m in Sources */,
 				4967A521182B7E2A00A7C32F /* Backlog.m in Sources */,
 				495240FC182A3017003F7F91 /* AppDelegate.m in Sources */,
 				495240F5182A3017003F7F91 /* main.m in Sources */,
 				4952411F182A313D003F7F91 /* Preferences.m in Sources */,
 				49524126182A9C41003F7F91 /* Story.m in Sources */,
+				4967A54F182CAB0C00A7C32F /* PreferencesRepository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +426,7 @@
 			files = (
 				4967A519182B787500A7C32F /* BacklogTest.m in Sources */,
 				4967A4D7182B4A3600A7C32F /* PreferencesControllerTest.m in Sources */,
+				4967A54C182CAA3800A7C32F /* PreferencesRepositoryTest.m in Sources */,
 				4967A547182CA59800A7C32F /* NSNumber+TimeExpiry.m in Sources */,
 				49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */,
 				4967A54A182CA6DD00A7C32F /* PollingDelegate.m in Sources */,
