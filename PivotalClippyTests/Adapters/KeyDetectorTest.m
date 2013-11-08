@@ -4,24 +4,50 @@
 @interface KeyDetectorTest : XCTestCase
 @end
 
-@implementation KeyDetectorTest
+@implementation KeyDetectorTest {
+    KeyDetector *detector;
+}
 
 - (void)testCallsBlockWhenConfiguredKeyIsPressed
 {
-    NSUInteger smash = (NSCommandKeyMask |
-                        NSControlKeyMask |
-                        NSAlternateKeyMask |
-                        NSShiftKeyMask);
-    KeyDetector *detector = [[KeyDetector alloc] initWithKey:@"S"
-                                                   modifiers:smash];
+    detector = [[KeyDetector alloc] initWithKey:@"S"
+                                      modifiers:self.smash];
 
     __block BOOL called = NO;
-    [detector handler:^{ called = YES; }]([self syntheticKeyPress:@"S" modifiers:smash]);
+    [detector handler:^{ called = YES; }]([self syntheticKeyPress:@"S" modifiers:self.smash]);
 
     XCTAssert(called);
 }
 
+- (void)testDoesntCallBlockWhenDifferentKeyIsPressed
+{
+    detector = [[KeyDetector alloc] initWithKey:@"S"
+                                      modifiers:NSCommandKeyMask];
+    __block BOOL called = NO;
+    [detector handler:^{ called = YES; }]([self syntheticKeyPress:@"D" modifiers:NSCommandKeyMask]);
+
+    XCTAssertFalse(called);
+}
+
+- (void)testDoesntCallBlockWhenDifferentModifiersAreHeld
+{
+    detector = [[KeyDetector alloc] initWithKey:@"S"
+                                      modifiers:NSCommandKeyMask];
+    __block BOOL called = NO;
+    [detector handler:^{ called = YES; }]([self syntheticKeyPress:@"S" modifiers:NSControlKeyMask]);
+
+    XCTAssertFalse(called);
+}
+
 #pragma mark - Private
+
+- (NSUInteger)smash
+{
+    return (NSCommandKeyMask |
+            NSControlKeyMask |
+            NSAlternateKeyMask |
+            NSShiftKeyMask);
+}
 
 - (NSEvent *)syntheticKeyPress:(NSString *)key
                      modifiers:(NSUInteger)modifiers
