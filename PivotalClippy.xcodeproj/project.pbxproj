@@ -18,16 +18,18 @@
 		49524109182A3017003F7F91 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495240E8182A3017003F7F91 /* Cocoa.framework */; };
 		49524111182A3017003F7F91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4952410F182A3017003F7F91 /* InfoPlist.strings */; };
 		4952411F182A313D003F7F91 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4952411E182A313D003F7F91 /* Preferences.m */; };
-		49524120182A313D003F7F91 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4952411E182A313D003F7F91 /* Preferences.m */; };
 		49524126182A9C41003F7F91 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = 49524125182A9C41003F7F91 /* Story.m */; };
-		49524127182A9C41003F7F91 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = 49524125182A9C41003F7F91 /* Story.m */; };
 		4967A4D7182B4A3600A7C32F /* PreferencesControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A4D6182B4A3600A7C32F /* PreferencesControllerTest.m */; };
 		4967A4EA182B4BED00A7C32F /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A4E9182B4BED00A7C32F /* OCMock.framework */; };
 		4967A4EE182B4C8E00A7C32F /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A4EC182B4C8E00A7C32F /* PreferencesController.m */; };
-		4967A4EF182B4C8E00A7C32F /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A4EC182B4C8E00A7C32F /* PreferencesController.m */; };
 		4967A4F3182B4CE400A7C32F /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4967A4F2182B4CE400A7C32F /* PreferencesController.xib */; };
-		4967A4F4182B4CE400A7C32F /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4967A4F2182B4CE400A7C32F /* PreferencesController.xib */; };
 		4967A4F7182B4FFA00A7C32F /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4967A4E9182B4BED00A7C32F /* OCMock.framework */; };
+		4967A519182B787500A7C32F /* BacklogTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A518182B787500A7C32F /* BacklogTest.m */; };
+		4967A521182B7E2A00A7C32F /* Backlog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A520182B7E2A00A7C32F /* Backlog.m */; };
+		4967A535182B7FE800A7C32F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A534182B7FE800A7C32F /* Security.framework */; };
+		4967A536182B7FFC00A7C32F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A534182B7FE800A7C32F /* Security.framework */; };
+		4967A547182CA59800A7C32F /* NSNumber+TimeExpiry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A546182CA59800A7C32F /* NSNumber+TimeExpiry.m */; };
+		4967A54A182CA6DD00A7C32F /* PollingDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A549182CA6DD00A7C32F /* PollingDelegate.m */; };
 		49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23F9182B3A6700147805 /* PreferencesTest.m */; };
 		49DF23FD182B3A6700147805 /* StoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23FA182B3A6700147805 /* StoryTest.m */; };
 /* End PBXBuildFile section */
@@ -84,6 +86,14 @@
 		4967A4EB182B4C8E00A7C32F /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		4967A4EC182B4C8E00A7C32F /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		4967A4F2182B4CE400A7C32F /* PreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
+		4967A518182B787500A7C32F /* BacklogTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BacklogTest.m; path = Adapters/BacklogTest.m; sourceTree = "<group>"; };
+		4967A51F182B7E2A00A7C32F /* Backlog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Backlog.h; sourceTree = "<group>"; };
+		4967A520182B7E2A00A7C32F /* Backlog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Backlog.m; sourceTree = "<group>"; };
+		4967A534182B7FE800A7C32F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4967A545182CA59800A7C32F /* NSNumber+TimeExpiry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+TimeExpiry.h"; sourceTree = "<group>"; };
+		4967A546182CA59800A7C32F /* NSNumber+TimeExpiry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+TimeExpiry.m"; sourceTree = "<group>"; };
+		4967A548182CA6DD00A7C32F /* PollingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollingDelegate.h; sourceTree = "<group>"; };
+		4967A549182CA6DD00A7C32F /* PollingDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollingDelegate.m; sourceTree = "<group>"; };
 		49DF23F9182B3A6700147805 /* PreferencesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesTest.m; sourceTree = "<group>"; };
 		49DF23FA182B3A6700147805 /* StoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTest.m; sourceTree = "<group>"; };
 		49DF23FB182B3A6700147805 /* ValueSemantics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueSemantics.h; sourceTree = "<group>"; };
@@ -94,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4967A535182B7FE800A7C32F /* Security.framework in Frameworks */,
 				495240E9182A3017003F7F91 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4967A536182B7FFC00A7C32F /* Security.framework in Frameworks */,
 				49524109182A3017003F7F91 /* Cocoa.framework in Frameworks */,
 				49524108182A3017003F7F91 /* XCTest.framework in Frameworks */,
 				4967A4EA182B4BED00A7C32F /* OCMock.framework in Frameworks */,
@@ -133,6 +145,7 @@
 		495240E7182A3017003F7F91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4967A534182B7FE800A7C32F /* Security.framework */,
 				4967A4E9182B4BED00A7C32F /* OCMock.framework */,
 				495240E8182A3017003F7F91 /* Cocoa.framework */,
 				49524107182A3017003F7F91 /* XCTest.framework */,
@@ -181,6 +194,8 @@
 		4952410C182A3017003F7F91 /* PivotalClippyTests */ = {
 			isa = PBXGroup;
 			children = (
+				4967A544182CA55300A7C32F /* Helpers */,
+				4967A517182B782D00A7C32F /* Adapters */,
 				49DF23F8182B39DD00147805 /* Values */,
 				49DF23F7182B39DA00147805 /* Controllers */,
 				4952410D182A3017003F7F91 /* Supporting Files */,
@@ -223,9 +238,30 @@
 		4967A4E0182B4AA800A7C32F /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
+				4967A51F182B7E2A00A7C32F /* Backlog.h */,
+				4967A520182B7E2A00A7C32F /* Backlog.m */,
 				4967A4E8182B4ADA00A7C32F /* Repository.h */,
 			);
 			path = Adapters;
+			sourceTree = "<group>";
+		};
+		4967A517182B782D00A7C32F /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				4967A518182B787500A7C32F /* BacklogTest.m */,
+			);
+			name = Adapters;
+			sourceTree = "<group>";
+		};
+		4967A544182CA55300A7C32F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4967A545182CA59800A7C32F /* NSNumber+TimeExpiry.h */,
+				4967A546182CA59800A7C32F /* NSNumber+TimeExpiry.m */,
+				4967A548182CA6DD00A7C32F /* PollingDelegate.h */,
+				4967A549182CA6DD00A7C32F /* PollingDelegate.m */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		49DF23F7182B39DA00147805 /* Controllers */ = {
@@ -335,7 +371,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4967A4F4182B4CE400A7C32F /* PreferencesController.xib in Resources */,
 				49524111182A3017003F7F91 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4967A4EE182B4C8E00A7C32F /* PreferencesController.m in Sources */,
+				4967A521182B7E2A00A7C32F /* Backlog.m in Sources */,
 				495240FC182A3017003F7F91 /* AppDelegate.m in Sources */,
 				495240F5182A3017003F7F91 /* main.m in Sources */,
 				4952411F182A313D003F7F91 /* Preferences.m in Sources */,
@@ -359,11 +395,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4967A4EF182B4C8E00A7C32F /* PreferencesController.m in Sources */,
-				49524120182A313D003F7F91 /* Preferences.m in Sources */,
+				4967A519182B787500A7C32F /* BacklogTest.m in Sources */,
 				4967A4D7182B4A3600A7C32F /* PreferencesControllerTest.m in Sources */,
-				49524127182A9C41003F7F91 /* Story.m in Sources */,
+				4967A547182CA59800A7C32F /* NSNumber+TimeExpiry.m in Sources */,
 				49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */,
+				4967A54A182CA6DD00A7C32F /* PollingDelegate.m in Sources */,
 				49DF23FD182B3A6700147805 /* StoryTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
