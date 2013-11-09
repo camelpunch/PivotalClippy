@@ -198,6 +198,7 @@
 				4967A4E0182B4AA800A7C32F /* Adapters */,
 				4967A4D8182B4A7400A7C32F /* Controllers */,
 				4952411C182A3116003F7F91 /* Domain */,
+				4967A56D182DDA9A00A7C32F /* Wiring */,
 				495240FA182A3017003F7F91 /* AppDelegate.h */,
 				495240FB182A3017003F7F91 /* AppDelegate.m */,
 				495240FD182A3017003F7F91 /* MainMenu.xib */,
@@ -314,6 +315,13 @@
 				4967A554182CAB9400A7C32F /* SSKeychainQuery.m */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		4967A56D182DDA9A00A7C32F /* Wiring */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Wiring;
 			sourceTree = "<group>";
 		};
 		49DF23F7182B39DA00147805 /* Controllers */ = {
