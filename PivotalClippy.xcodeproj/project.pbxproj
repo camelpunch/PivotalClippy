@@ -40,6 +40,7 @@
 		4967A568182CB8B300A7C32F /* Notifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A567182CB8B300A7C32F /* Notifier.m */; };
 		4967A56A182CB92600A7C32F /* CopierTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A569182CB92600A7C32F /* CopierTest.m */; };
 		4967A56C182CBDAA00A7C32F /* KeyDetectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A56B182CBDAA00A7C32F /* KeyDetectorTest.m */; };
+		4967A570182DDAF300A7C32F /* KeyboardStoryCopier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A56F182DDAF300A7C32F /* KeyboardStoryCopier.m */; };
 		49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23F9182B3A6700147805 /* PreferencesTest.m */; };
 		49DF23FD182B3A6700147805 /* StoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23FA182B3A6700147805 /* StoryTest.m */; };
 /* End PBXBuildFile section */
@@ -121,6 +122,8 @@
 		4967A567182CB8B300A7C32F /* Notifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notifier.m; sourceTree = "<group>"; };
 		4967A569182CB92600A7C32F /* CopierTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopierTest.m; sourceTree = "<group>"; };
 		4967A56B182CBDAA00A7C32F /* KeyDetectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyDetectorTest.m; sourceTree = "<group>"; };
+		4967A56E182DDAF300A7C32F /* KeyboardStoryCopier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardStoryCopier.h; sourceTree = "<group>"; };
+		4967A56F182DDAF300A7C32F /* KeyboardStoryCopier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardStoryCopier.m; sourceTree = "<group>"; };
 		49DF23F9182B3A6700147805 /* PreferencesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesTest.m; sourceTree = "<group>"; };
 		49DF23FA182B3A6700147805 /* StoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTest.m; sourceTree = "<group>"; };
 		49DF23FB182B3A6700147805 /* ValueSemantics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueSemantics.h; sourceTree = "<group>"; };
@@ -320,6 +323,8 @@
 		4967A56D182DDA9A00A7C32F /* Wiring */ = {
 			isa = PBXGroup;
 			children = (
+				4967A56E182DDAF300A7C32F /* KeyboardStoryCopier.h */,
+				4967A56F182DDAF300A7C32F /* KeyboardStoryCopier.m */,
 			);
 			path = Wiring;
 			sourceTree = "<group>";
@@ -450,6 +455,7 @@
 				4967A521182B7E2A00A7C32F /* Backlog.m in Sources */,
 				4967A562182CB7BE00A7C32F /* StoryController.m in Sources */,
 				495240FC182A3017003F7F91 /* AppDelegate.m in Sources */,
+				4967A570182DDAF300A7C32F /* KeyboardStoryCopier.m in Sources */,
 				495240F5182A3017003F7F91 /* main.m in Sources */,
 				4952411F182A313D003F7F91 /* Preferences.m in Sources */,
 				4967A568182CB8B300A7C32F /* Notifier.m in Sources */,
