@@ -2,9 +2,9 @@
 
 @interface Preferences : NSObject <NSCopying>
 
-@property (strong, nonatomic, readonly) NSString *username;
-@property (strong, nonatomic, readonly) NSString *token;
-@property (strong, nonatomic, readonly) NSString *projectID;
+@property (copy, nonatomic, readonly) NSString *username;
+@property (copy, nonatomic, readonly) NSString *token;
+@property (copy, nonatomic, readonly) NSString *projectID;
 
 - (id)initWithUsername:(NSString *)aUsername
                  token:(NSString *)aToken

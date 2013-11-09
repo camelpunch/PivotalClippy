@@ -20,15 +20,23 @@
     return self;
 }
 
-- (BOOL)isEqual:(id)object
-{
-    return [object isKindOfClass:[self class]] && [self isEqualToStory:object];
-}
-
 - (BOOL)isEqualToStory:(Story *)otherStory
 {
     return ([self.storyID isEqualToNumber:otherStory.storyID] || !(self.storyID || otherStory.storyID)) &&
     ([self.name isEqualToString:otherStory.name] || !(self.name || otherStory.name));
+}
+
+#pragma mark - <NSObject>
+
+- (id)init
+{
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
+- (BOOL)isEqual:(id)object
+{
+    return [object isKindOfClass:[self class]] && [self isEqualToStory:object];
 }
 
 - (NSString *)description
@@ -41,14 +49,6 @@
 - (id)copyWithZone:(NSZone *)zone
 {
     return self;
-}
-
-#pragma mark - Private
-
-- (id)init
-{
-    [self doesNotRecognizeSelector:_cmd];
-    return nil;
 }
 
 @end

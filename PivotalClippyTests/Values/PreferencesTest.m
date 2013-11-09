@@ -11,6 +11,16 @@
 
 #pragma mark - <ValueSemantics>
 
+- (void)testHasImmutableProperties
+{
+    NSMutableString *changingToken = [NSMutableString stringWithString:@"originaltoken"];
+    a = [[Preferences alloc] initWithUsername:@"abc"
+                                        token:changingToken
+                                    projectID:@"asdfasdf"];
+    [changingToken appendString:@"mutated"];
+    XCTAssertEqualObjects(@"originaltoken", a.token);
+}
+
 - (void)testEqualWithSameProperties
 {
     a = [[Preferences alloc] initWithUsername:@"abc"

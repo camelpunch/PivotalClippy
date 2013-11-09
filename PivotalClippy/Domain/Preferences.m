@@ -1,6 +1,14 @@
 #import "Preferences.h"
 #import <objc/message.h>
 
+@interface Preferences ()
+
+@property (copy, nonatomic, readwrite) NSString *username;
+@property (copy, nonatomic, readwrite) NSString *token;
+@property (copy, nonatomic, readwrite) NSString *projectID;
+
+@end
+
 @implementation Preferences
 
 - (id)initWithUsername:(NSString *)aUsername
@@ -9,9 +17,9 @@
 {
     self = [super init];
     if (self) {
-        _username = aUsername;
-        _token = aToken;
-        _projectID = aProjectID;
+        self.username = aUsername;
+        self.token = aToken;
+        self.projectID = aProjectID;
     }
     return self;
 }

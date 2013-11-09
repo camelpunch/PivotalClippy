@@ -11,6 +11,15 @@
 
 #pragma mark - <ValueSemantics>
 
+- (void)testHasImmutableProperties
+{
+    NSMutableString *changingString = [NSMutableString stringWithString:@"Andrew"];
+    a = [[Story alloc] initWithStoryID:@123
+                                  name:changingString];
+    [changingString appendString:@" Bruce"];
+    XCTAssertEqualObjects(@"Andrew", a.name);
+}
+
 - (void)testEqualWithSameProperties
 {
     a = [[Story alloc] initWithStoryID:@123

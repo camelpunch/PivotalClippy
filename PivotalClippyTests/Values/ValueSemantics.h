@@ -2,6 +2,7 @@
 
 @protocol ValueSemantics <NSObject>
 
+- (void)testHasImmutableProperties;
 - (void)testEqualWithSameProperties;
 - (void)testEqualWithNilProperties;
 - (void)testNotEqualWithDifferentProperties;
