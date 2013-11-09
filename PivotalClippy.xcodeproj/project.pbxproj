@@ -27,7 +27,7 @@
 		4967A535182B7FE800A7C32F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A534182B7FE800A7C32F /* Security.framework */; };
 		4967A536182B7FFC00A7C32F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A534182B7FE800A7C32F /* Security.framework */; };
 		4967A547182CA59800A7C32F /* NSNumber+TimeExpiry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A546182CA59800A7C32F /* NSNumber+TimeExpiry.m */; };
-		4967A54A182CA6DD00A7C32F /* PollingDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A549182CA6DD00A7C32F /* PollingDelegate.m */; };
+		4967A54A182CA6DD00A7C32F /* RecordingDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A549182CA6DD00A7C32F /* RecordingDelegate.m */; };
 		4967A54F182CAB0C00A7C32F /* PreferencesRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A54E182CAB0C00A7C32F /* PreferencesRepository.m */; };
 		4967A555182CAB9400A7C32F /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A552182CAB9400A7C32F /* SSKeychain.m */; };
 		4967A556182CAB9400A7C32F /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A554182CAB9400A7C32F /* SSKeychainQuery.m */; };
@@ -101,8 +101,8 @@
 		4967A534182B7FE800A7C32F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4967A545182CA59800A7C32F /* NSNumber+TimeExpiry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+TimeExpiry.h"; sourceTree = "<group>"; };
 		4967A546182CA59800A7C32F /* NSNumber+TimeExpiry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+TimeExpiry.m"; sourceTree = "<group>"; };
-		4967A548182CA6DD00A7C32F /* PollingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PollingDelegate.h; sourceTree = "<group>"; };
-		4967A549182CA6DD00A7C32F /* PollingDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PollingDelegate.m; sourceTree = "<group>"; };
+		4967A548182CA6DD00A7C32F /* RecordingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordingDelegate.h; sourceTree = "<group>"; };
+		4967A549182CA6DD00A7C32F /* RecordingDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingDelegate.m; sourceTree = "<group>"; };
 		4967A54D182CAB0C00A7C32F /* PreferencesRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesRepository.h; sourceTree = "<group>"; };
 		4967A54E182CAB0C00A7C32F /* PreferencesRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesRepository.m; sourceTree = "<group>"; };
 		4967A551182CAB9400A7C32F /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
@@ -303,8 +303,8 @@
 			children = (
 				4967A545182CA59800A7C32F /* NSNumber+TimeExpiry.h */,
 				4967A546182CA59800A7C32F /* NSNumber+TimeExpiry.m */,
-				4967A548182CA6DD00A7C32F /* PollingDelegate.h */,
-				4967A549182CA6DD00A7C32F /* PollingDelegate.m */,
+				4967A548182CA6DD00A7C32F /* RecordingDelegate.h */,
+				4967A549182CA6DD00A7C32F /* RecordingDelegate.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -475,7 +475,7 @@
 				4967A55C182CB6E700A7C32F /* PreferencesControllerTest.m in Sources */,
 				4967A56C182CBDAA00A7C32F /* KeyDetectorTest.m in Sources */,
 				49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */,
-				4967A54A182CA6DD00A7C32F /* PollingDelegate.m in Sources */,
+				4967A54A182CA6DD00A7C32F /* RecordingDelegate.m in Sources */,
 				49DF23FD182B3A6700147805 /* StoryTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

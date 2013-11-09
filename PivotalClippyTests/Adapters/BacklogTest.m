@@ -1,5 +1,5 @@
 #import <XCTest/XCTest.h>
-#import "PollingDelegate.h"
+#import "RecordingDelegate.h"
 #import "Backlog.h"
 #import "Story.h"
 #import "Preferences.h"
@@ -9,7 +9,7 @@
 @end
 
 @implementation BacklogTest {
-    PollingDelegate *delegate;
+    RecordingDelegate *delegate;
     Backlog *backlog;
     Story *eligibleStory;
     Preferences *prefs;
@@ -21,7 +21,7 @@
     backlog = [[Backlog alloc] init];
     eligibleStory = [[Story alloc] initWithStoryID:@59622372
                                               name:@"Eligible story"];
-    delegate = [[PollingDelegate alloc] init];
+    delegate = [[RecordingDelegate alloc] init];
     backlog.delegate = delegate;
 
     prefs = [[Preferences alloc] initWithUsername:@"brucie"

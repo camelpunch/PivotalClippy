@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "Repository.h"
 
-@interface PollingDelegate : NSObject <RepositoryDelegate>
+@interface RecordingDelegate : NSObject <RepositoryDelegate>
 
 @property (nonatomic, readonly) id receivedItem;
 

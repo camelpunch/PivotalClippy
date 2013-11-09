@@ -1,8 +1,8 @@
-#import "PollingDelegate.h"
+#import "RecordingDelegate.h"
 
 @protocol Repository;
 
-@implementation PollingDelegate
+@implementation RecordingDelegate
 
 - (void)repository:(id <Repository>)aRepository
       didFetchItem:(id)anItem
