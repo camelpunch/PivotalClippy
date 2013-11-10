@@ -22,7 +22,9 @@
         copier = [[Copier alloc] initWithPasteboard:[NSPasteboard generalPasteboard]];
         notifier = [[Notifier alloc] initWithNotificationCenter:[NSUserNotificationCenter defaultUserNotificationCenter]];
         storyController = [[StoryController alloc] initWithCopier:copier];
-        backlog = [[Backlog alloc] init];
+        JSONFetcher *fetcher = [[JSONFetcher alloc] init];
+        backlog = [[Backlog alloc] initWithURLFetcher:fetcher];
+        fetcher.delegate = backlog;
         prefsRepo = [[PreferencesRepository alloc] initWithAccount:@"StoryTool"];
         NSUInteger highSmash = NSCommandKeyMask | NSControlKeyMask | NSAlternateKeyMask | NSShiftKeyMask;
         keyDetector = [[KeyDetector alloc] initWithKey:@"S"

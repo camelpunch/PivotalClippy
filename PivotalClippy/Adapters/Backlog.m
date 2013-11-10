@@ -1,34 +1,51 @@
 #import "Backlog.h"
+#import "JSONFetcher.h"
 #import "Story.h"
 #import "Preferences.h"
 
+@interface Backlog ()
+@property (nonatomic) JSONFetcher *fetcher;
+@end
+
 @implementation Backlog
 @synthesize delegate;
+
+- (id)initWithURLFetcher:(id <URLFetcher>)fetcher
+{
+    self = [super init];
+    if (self) {
+        self.fetcher = fetcher;
+    }
+    return self;
+}
 
 #pragma mark - <RepositoryDelegate>
 
 - (void)repository:(id <Repository>)prefsRepo
       didFetchItem:(Preferences *)prefs
 {
-    NSURLSessionConfiguration *config =
-    [NSURLSessionConfiguration defaultSessionConfiguration];
+    [self.fetcher fetchFromURL:[self urlWithProjectID:prefs.projectID storyOwner:prefs.username]
+                       headers:@{@"X-Tracker-Token": prefs.token}];
+}
 
-    [config setHTTPAdditionalHeaders:@{@"X-Tracker-Token": prefs.token}];
+#pragma mark - <URLFetcherDelegate>
 
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+- (void)URLFetcher:(id <URLFetcher>)fetcher
+    didFetchObject:(NSArray *)rawStories
+{
+    NSDictionary *rawStory = rawStories[0];
+    Story *story = [[Story alloc] initWithStoryID:rawStory[@"id"]
+                                             name:rawStory[@"name"]];
+    [self.delegate repository:self
+                 didFetchItem:story];
+}
 
-    Backlog * __weak weakSelf = self;
-    [[session dataTaskWithURL:[self urlWithProjectID:prefs.projectID storyOwner:prefs.username]
-            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                NSArray *rawStories = [NSJSONSerialization JSONObjectWithData:data
-                                                                      options:0
-                                                                        error:nil];
-                NSDictionary *rawStory = rawStories[0];
-                Story *story = [[Story alloc] initWithStoryID:rawStory[@"id"]
-                                                         name:rawStory[@"name"]];
-                [weakSelf.delegate repository:weakSelf
-                                 didFetchItem:story];
-            }] resume];
+#pragma mark - <NSObject>
+
+- (id)init
+{
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
 }
 
 #pragma mark - Private

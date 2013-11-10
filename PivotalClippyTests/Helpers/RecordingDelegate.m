@@ -10,4 +10,10 @@
     _receivedItem = anItem;
 }
 
+- (void)URLFetcher:(id<URLFetcher>)fetcher
+    didFetchObject:(id)object
+{
+    _receivedItem = object;
+}
+
 @end

@@ -37,11 +37,6 @@
                BlueprintName = "PivotalClippyTests"
                ReferencedContainer = "container:PivotalClippy.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "BacklogTest">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
