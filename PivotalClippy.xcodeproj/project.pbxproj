@@ -17,8 +17,6 @@
 		49524108182A3017003F7F91 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49524107182A3017003F7F91 /* XCTest.framework */; };
 		49524109182A3017003F7F91 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495240E8182A3017003F7F91 /* Cocoa.framework */; };
 		49524111182A3017003F7F91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4952410F182A3017003F7F91 /* InfoPlist.strings */; };
-		4952411F182A313D003F7F91 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4952411E182A313D003F7F91 /* Preferences.m */; };
-		49524126182A9C41003F7F91 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = 49524125182A9C41003F7F91 /* Story.m */; };
 		4967A4EA182B4BED00A7C32F /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A4E9182B4BED00A7C32F /* OCMock.framework */; };
 		4967A4EE182B4C8E00A7C32F /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A4EC182B4C8E00A7C32F /* PreferencesController.m */; };
 		4967A4F3182B4CE400A7C32F /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4967A4F2182B4CE400A7C32F /* PreferencesController.xib */; };
@@ -44,6 +42,8 @@
 		4967A58E182EE4AD00A7C32F /* NotifierTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A58D182EE4AD00A7C32F /* NotifierTest.m */; };
 		4967A593182F29E100A7C32F /* JSONFetcherTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A592182F29E100A7C32F /* JSONFetcherTest.m */; };
 		4967A596182F2B7D00A7C32F /* JSONFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A595182F2B7D00A7C32F /* JSONFetcher.m */; };
+		4967A59E182FB9FE00A7C32F /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A59A182FB9FE00A7C32F /* Story.m */; };
+		4967A59F182FB9FE00A7C32F /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A59B182FB9FE00A7C32F /* Preferences.m */; };
 		49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23F9182B3A6700147805 /* PreferencesTest.m */; };
 		49DF23FD182B3A6700147805 /* StoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23FA182B3A6700147805 /* StoryTest.m */; };
 /* End PBXBuildFile section */
@@ -90,10 +90,6 @@
 		49524107182A3017003F7F91 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4952410E182A3017003F7F91 /* PivotalClippyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PivotalClippyTests-Info.plist"; sourceTree = "<group>"; };
 		49524110182A3017003F7F91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4952411D182A313D003F7F91 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
-		4952411E182A313D003F7F91 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
-		49524124182A9C41003F7F91 /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Story.h; sourceTree = "<group>"; };
-		49524125182A9C41003F7F91 /* Story.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Story.m; sourceTree = "<group>"; };
 		4967A4E8182B4ADA00A7C32F /* Repository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
 		4967A4E9182B4BED00A7C32F /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
 		4967A4EB182B4C8E00A7C32F /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
@@ -132,6 +128,10 @@
 		4967A594182F2B7D00A7C32F /* JSONFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONFetcher.h; sourceTree = "<group>"; };
 		4967A595182F2B7D00A7C32F /* JSONFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONFetcher.m; sourceTree = "<group>"; };
 		4967A597182F42A500A7C32F /* URLFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLFetcher.h; sourceTree = "<group>"; };
+		4967A59A182FB9FE00A7C32F /* Story.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Story.m; sourceTree = "<group>"; };
+		4967A59B182FB9FE00A7C32F /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
+		4967A59C182FB9FE00A7C32F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		4967A59D182FB9FE00A7C32F /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Story.h; sourceTree = "<group>"; };
 		49DF23F9182B3A6700147805 /* PreferencesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesTest.m; sourceTree = "<group>"; };
 		49DF23FA182B3A6700147805 /* StoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTest.m; sourceTree = "<group>"; };
 		49DF23FB182B3A6700147805 /* ValueSemantics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueSemantics.h; sourceTree = "<group>"; };
@@ -234,10 +234,10 @@
 		4952410C182A3017003F7F91 /* PivotalClippyTests */ = {
 			isa = PBXGroup;
 			children = (
-				4967A544182CA55300A7C32F /* Helpers */,
 				4967A517182B782D00A7C32F /* Adapters */,
-				49DF23F8182B39DD00147805 /* Values */,
 				49DF23F7182B39DA00147805 /* Controllers */,
+				4967A598182FB8E100A7C32F /* Domain */,
+				4967A544182CA55300A7C32F /* Helpers */,
 				4952410D182A3017003F7F91 /* Supporting Files */,
 			);
 			path = PivotalClippyTests;
@@ -255,10 +255,7 @@
 		4952411C182A3116003F7F91 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				4952411D182A313D003F7F91 /* Preferences.h */,
-				4952411E182A313D003F7F91 /* Preferences.m */,
-				49524124182A9C41003F7F91 /* Story.h */,
-				49524125182A9C41003F7F91 /* Story.m */,
+				4967A599182FB9B700A7C32F /* Values */,
 			);
 			name = Domain;
 			path = PivotalClippy/Domain;
@@ -342,6 +339,25 @@
 			path = Wiring;
 			sourceTree = "<group>";
 		};
+		4967A598182FB8E100A7C32F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				49DF23F8182B39DD00147805 /* Values */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		4967A599182FB9B700A7C32F /* Values */ = {
+			isa = PBXGroup;
+			children = (
+				4967A59A182FB9FE00A7C32F /* Story.m */,
+				4967A59B182FB9FE00A7C32F /* Preferences.m */,
+				4967A59C182FB9FE00A7C32F /* Preferences.h */,
+				4967A59D182FB9FE00A7C32F /* Story.h */,
+			);
+			path = Values;
+			sourceTree = "<group>";
+		};
 		49DF23F7182B39DA00147805 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,9 +369,9 @@
 		49DF23F8182B39DD00147805 /* Values */ = {
 			isa = PBXGroup;
 			children = (
-				49DF23FB182B3A6700147805 /* ValueSemantics.h */,
 				49DF23F9182B3A6700147805 /* PreferencesTest.m */,
 				49DF23FA182B3A6700147805 /* StoryTest.m */,
+				49DF23FB182B3A6700147805 /* ValueSemantics.h */,
 			);
 			path = Values;
 			sourceTree = "<group>";
@@ -465,16 +481,16 @@
 				4967A55F182CB79400A7C32F /* KeyDetector.m in Sources */,
 				4967A556182CAB9400A7C32F /* SSKeychainQuery.m in Sources */,
 				4967A555182CAB9400A7C32F /* SSKeychain.m in Sources */,
+				4967A59E182FB9FE00A7C32F /* Story.m in Sources */,
 				4967A596182F2B7D00A7C32F /* JSONFetcher.m in Sources */,
 				4967A521182B7E2A00A7C32F /* Backlog.m in Sources */,
 				4967A562182CB7BE00A7C32F /* StoryController.m in Sources */,
 				495240FC182A3017003F7F91 /* AppDelegate.m in Sources */,
 				4967A570182DDAF300A7C32F /* KeyboardStoryCopier.m in Sources */,
 				495240F5182A3017003F7F91 /* main.m in Sources */,
-				4952411F182A313D003F7F91 /* Preferences.m in Sources */,
 				4967A568182CB8B300A7C32F /* Notifier.m in Sources */,
-				49524126182A9C41003F7F91 /* Story.m in Sources */,
 				4967A54F182CAB0C00A7C32F /* PreferencesRepository.m in Sources */,
+				4967A59F182FB9FE00A7C32F /* Preferences.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
