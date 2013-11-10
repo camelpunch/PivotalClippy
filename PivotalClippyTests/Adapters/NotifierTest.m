@@ -17,7 +17,7 @@
     [notifier repository:nil didPutItem:@"some string"];
 
     NSPredicate *predicate = [NSPredicate predicateWithFormat:
-                              @"subtitle == 'some string copied to clipboard'"];
+                              @"subtitle == '\"some string\" copied to clipboard'"];
     NSArray *matchingNotifications = [center.deliveredNotifications filteredArrayUsingPredicate:predicate];
     XCTAssertEqualObjects(@1, @(matchingNotifications.count));
 }

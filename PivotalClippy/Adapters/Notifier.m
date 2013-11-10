@@ -19,7 +19,7 @@
 {
     NSUserNotification *notification = [[NSUserNotification alloc] init];
     notification.title = @"Tracker Story ID copied";
-    notification.subtitle = [NSString stringWithFormat:@"%@ copied to clipboard", anItem];
+    notification.subtitle = [NSString stringWithFormat:@"\"%@\" copied to clipboard", anItem];
     [center deliverNotification:notification];
 }
 
