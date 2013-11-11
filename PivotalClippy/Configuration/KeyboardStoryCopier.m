@@ -5,6 +5,7 @@
 #import "PreferencesRepository.h"
 #import "Notifier.h"
 #import "StoryController.h"
+#import "JSONFetcher.h"
 
 @implementation KeyboardStoryCopier {
     KeyDetector *keyDetector;

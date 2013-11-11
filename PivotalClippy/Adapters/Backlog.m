@@ -1,5 +1,5 @@
 #import "Backlog.h"
-#import "JSONFetcher.h"
+#import "URLFetcher.h"
 #import "Story.h"
 #import "Preferences.h"
 

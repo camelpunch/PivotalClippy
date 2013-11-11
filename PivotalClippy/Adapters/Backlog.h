@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "Repository.h"
-#import "JSONFetcher.h"
+#import "URLFetcher.h"
 
 @interface Backlog : NSObject <Repository, RepositoryDelegate, URLFetcherDelegate>
 
