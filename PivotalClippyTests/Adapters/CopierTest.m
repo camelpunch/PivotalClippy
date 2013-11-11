@@ -34,4 +34,10 @@
     [delegate verify];
 }
 
+- (void)testRaisesExceptionWhenPuttingNil
+{
+    copier = [[Copier alloc] initWithPasteboard:nil];
+    XCTAssertThrowsSpecific([copier put:nil], NothingToCopy);
+}
+
 @end

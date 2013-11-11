@@ -30,7 +30,6 @@
 		4967A555182CAB9400A7C32F /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A552182CAB9400A7C32F /* SSKeychain.m */; };
 		4967A556182CAB9400A7C32F /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A554182CAB9400A7C32F /* SSKeychainQuery.m */; };
 		4967A559182CB6B900A7C32F /* PreferencesRepositoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A557182CB6B900A7C32F /* PreferencesRepositoryTest.m */; };
-		4967A55A182CB6B900A7C32F /* BacklogTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A558182CB6B900A7C32F /* BacklogTest.m */; };
 		4967A55C182CB6E700A7C32F /* PreferencesControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A55B182CB6E700A7C32F /* PreferencesControllerTest.m */; };
 		4967A55F182CB79400A7C32F /* KeyDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A55D182CB79400A7C32F /* KeyDetector.m */; };
 		4967A562182CB7BE00A7C32F /* StoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A561182CB7BE00A7C32F /* StoryController.m */; };
@@ -44,6 +43,8 @@
 		4967A596182F2B7D00A7C32F /* JSONFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A595182F2B7D00A7C32F /* JSONFetcher.m */; };
 		4967A59E182FB9FE00A7C32F /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A59A182FB9FE00A7C32F /* Story.m */; };
 		4967A59F182FB9FE00A7C32F /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A59B182FB9FE00A7C32F /* Preferences.m */; };
+		4967A5A1182FBA8F00A7C32F /* FetchingASingleStoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A5A0182FBA8F00A7C32F /* FetchingASingleStoryTest.m */; };
+		4967A5A3183061CA00A7C32F /* StoryControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A5A2183061CA00A7C32F /* StoryControllerTest.m */; };
 		49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23F9182B3A6700147805 /* PreferencesTest.m */; };
 		49DF23FD182B3A6700147805 /* StoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23FA182B3A6700147805 /* StoryTest.m */; };
 /* End PBXBuildFile section */
@@ -109,7 +110,6 @@
 		4967A553182CAB9400A7C32F /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
 		4967A554182CAB9400A7C32F /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		4967A557182CB6B900A7C32F /* PreferencesRepositoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesRepositoryTest.m; sourceTree = "<group>"; };
-		4967A558182CB6B900A7C32F /* BacklogTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BacklogTest.m; sourceTree = "<group>"; };
 		4967A55B182CB6E700A7C32F /* PreferencesControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesControllerTest.m; sourceTree = "<group>"; };
 		4967A55D182CB79400A7C32F /* KeyDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyDetector.m; sourceTree = "<group>"; };
 		4967A55E182CB79400A7C32F /* KeyDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyDetector.h; sourceTree = "<group>"; };
@@ -132,6 +132,8 @@
 		4967A59B182FB9FE00A7C32F /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
 		4967A59C182FB9FE00A7C32F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
 		4967A59D182FB9FE00A7C32F /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Story.h; sourceTree = "<group>"; };
+		4967A5A0182FBA8F00A7C32F /* FetchingASingleStoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchingASingleStoryTest.m; sourceTree = "<group>"; };
+		4967A5A2183061CA00A7C32F /* StoryControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryControllerTest.m; sourceTree = "<group>"; };
 		49DF23F9182B3A6700147805 /* PreferencesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesTest.m; sourceTree = "<group>"; };
 		49DF23FA182B3A6700147805 /* StoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTest.m; sourceTree = "<group>"; };
 		49DF23FB182B3A6700147805 /* ValueSemantics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueSemantics.h; sourceTree = "<group>"; };
@@ -298,7 +300,6 @@
 		4967A517182B782D00A7C32F /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
-				4967A558182CB6B900A7C32F /* BacklogTest.m */,
 				4967A569182CB92600A7C32F /* CopierTest.m */,
 				4967A592182F29E100A7C32F /* JSONFetcherTest.m */,
 				4967A56B182CBDAA00A7C32F /* KeyDetectorTest.m */,
@@ -343,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				49DF23F8182B39DD00147805 /* Values */,
+				4967A5A0182FBA8F00A7C32F /* FetchingASingleStoryTest.m */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -362,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				4967A55B182CB6E700A7C32F /* PreferencesControllerTest.m */,
+				4967A5A2183061CA00A7C32F /* StoryControllerTest.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -499,14 +502,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4967A559182CB6B900A7C32F /* PreferencesRepositoryTest.m in Sources */,
+				4967A5A3183061CA00A7C32F /* StoryControllerTest.m in Sources */,
 				4967A56A182CB92600A7C32F /* CopierTest.m in Sources */,
 				4967A593182F29E100A7C32F /* JSONFetcherTest.m in Sources */,
-				4967A55A182CB6B900A7C32F /* BacklogTest.m in Sources */,
 				4967A547182CA59800A7C32F /* NSNumber+TimeExpiry.m in Sources */,
 				4967A55C182CB6E700A7C32F /* PreferencesControllerTest.m in Sources */,
 				4967A58E182EE4AD00A7C32F /* NotifierTest.m in Sources */,
 				4967A56C182CBDAA00A7C32F /* KeyDetectorTest.m in Sources */,
 				49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */,
+				4967A5A1182FBA8F00A7C32F /* FetchingASingleStoryTest.m in Sources */,
 				4967A54A182CA6DD00A7C32F /* RecordingDelegate.m in Sources */,
 				49DF23FD182B3A6700147805 /* StoryTest.m in Sources */,
 			);

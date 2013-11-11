@@ -23,9 +23,10 @@
         notifier = [[Notifier alloc] initWithNotificationCenter:[NSUserNotificationCenter defaultUserNotificationCenter]];
         storyController = [[StoryController alloc] initWithCopier:copier];
         JSONFetcher *fetcher = [[JSONFetcher alloc] init];
-        backlog = [[Backlog alloc] initWithURLFetcher:fetcher];
-        fetcher.delegate = backlog;
         prefsRepo = [[PreferencesRepository alloc] initWithAccount:@"StoryTool"];
+        backlog = [[Backlog alloc] initWithURLFetcher:fetcher
+                                preferencesRepository:prefsRepo];
+        fetcher.delegate = backlog;
         NSUInteger highSmash = NSCommandKeyMask | NSControlKeyMask | NSAlternateKeyMask | NSShiftKeyMask;
         keyDetector = [[KeyDetector alloc] initWithKey:@"S"
                                              modifiers:highSmash];
@@ -41,7 +42,8 @@
         backlog.delegate = storyController;
         copier.delegate = notifier;
 
-        [prefsRepo fetchItem];
+        // TODO: un-hardcode story name - we probably get the predicate from the UI
+        [backlog fetchFirstStoryInProgressWhere:[NSPredicate predicateWithFormat:@"name = 'Eligible story'"]];
     }]];
 }
 

@@ -4,19 +4,29 @@
 #import "Preferences.h"
 
 @interface Backlog ()
-@property (nonatomic) JSONFetcher *fetcher;
+@property (nonatomic) id <URLFetcher> fetcher;
+@property (nonatomic) id <Repository> prefsRepo;
+@property (nonatomic) NSPredicate *predicate;
 @end
 
 @implementation Backlog
 @synthesize delegate;
 
 - (id)initWithURLFetcher:(id <URLFetcher>)fetcher
+   preferencesRepository:(id <Repository>)prefsRepo
 {
     self = [super init];
     if (self) {
         self.fetcher = fetcher;
+        self.prefsRepo = prefsRepo;
     }
     return self;
+}
+
+- (void)fetchFirstStoryInProgressWhere:(NSPredicate *)predicate
+{
+    self.predicate = predicate; // TODO: tie predicate to request
+    [self.prefsRepo fetchItem];
 }
 
 #pragma mark - <RepositoryDelegate>
@@ -24,7 +34,7 @@
 - (void)repository:(id <Repository>)prefsRepo
       didFetchItem:(Preferences *)prefs
 {
-    [self.fetcher fetchFromURL:[self urlWithProjectID:prefs.projectID storyOwner:prefs.username]
+    [self.fetcher fetchFromURL:[self urlWithProjectID:prefs.projectID]
                        headers:@{@"X-Tracker-Token": prefs.token}];
 }
 
@@ -33,11 +43,19 @@
 - (void)URLFetcher:(id <URLFetcher>)fetcher
     didFetchObject:(NSArray *)rawStories
 {
-    NSDictionary *rawStory = rawStories[0];
-    Story *story = [[Story alloc] initWithStoryID:rawStory[@"id"]
-                                             name:rawStory[@"name"]];
-    [self.delegate repository:self
-                 didFetchItem:story];
+    NSMutableArray *stories = [NSMutableArray array];
+    [rawStories enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [stories addObject:[[Story alloc] initWithStoryID:obj[@"id"]
+                                                     name:obj[@"name"]]];
+    }];
+    [stories filterUsingPredicate:self.predicate];
+
+    if (stories.count > 0) {
+        [self.delegate repository:self
+                     didFetchItem:[stories firstObject]];
+    } else {
+        [self.delegate repository:self didFailToFetchWhere:self.predicate];
+    }
 }
 
 #pragma mark - <NSObject>
@@ -51,17 +69,11 @@
 #pragma mark - Private
 
 - (NSURL *)urlWithProjectID:(NSString *)projectID
-                 storyOwner:(NSString *)storyOwner
 {
     NSString *urlString = [NSString stringWithFormat:@"https://www.pivotaltracker.com/"
-                           "services/v5/projects/%@/stories?filter=%@&limit=1",
-                           projectID, [self filterWithStoryOwner:storyOwner]];
+                           "services/v5/projects/%@/stories?with_state=started",
+                           projectID];
     return [NSURL URLWithString:urlString];
-}
-
-- (NSString *)filterWithStoryOwner:(NSString *)storyOwner
-{
-    return [NSString stringWithFormat:@"mywork%%3A%@+state%%3Astarted", storyOwner];
 }
 
 @end

@@ -1,5 +1,8 @@
 #import "Copier.h"
 
+@implementation NothingToCopy
+@end
+
 @implementation Copier {
     NSPasteboard *pasteboard;
 }
@@ -16,6 +19,11 @@
 
 - (void)put:(NSString *)someText
 {
+    if (!someText)
+        @throw [NothingToCopy exceptionWithName:@"Nothing to copy"
+                                         reason:@"Provided string was nil"
+                                       userInfo:nil];
+
     [pasteboard clearContents];
     [pasteboard writeObjects:@[someText]];
     [self.delegate repository:self didPutItem:someText];

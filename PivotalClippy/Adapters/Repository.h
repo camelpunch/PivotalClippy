@@ -7,6 +7,8 @@
 
 - (void)repository:(id <Repository>)aRepository
       didFetchItem:(id)anItem;
+- (void) repository:(id <Repository>)aRepository
+didFailToFetchWhere:(NSPredicate *)predicate;
 
 - (void)repository:(id<Repository>)aRepository
         didPutItem:(id)anItem;
