@@ -9,6 +9,9 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    if (NSClassFromString(@"XCTestCase"))
+        return;
+    
     [self accessibilityMessage];
 
     PreferencesRepository *guiPrefsRepo = [[PreferencesRepository alloc] initWithAccount:@"StoryTool"];
