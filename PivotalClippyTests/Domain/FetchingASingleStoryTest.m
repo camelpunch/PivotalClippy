@@ -4,6 +4,7 @@
 #import "Backlog.h"
 #import "Preferences.h"
 #import "Story.h"
+#import "Constants.h"
 
 @interface FetchingASingleStoryTest : XCTestCase
 @end
@@ -81,6 +82,26 @@
 
     [[delegate expect] repository:backlog didFailToFetchWhere:nameIsSudo];
     [backlog URLFetcher:nil didFetchObject:@[]];
+    [delegate verify];
+}
+
+- (void)testDelegateReceivesFailureMessageWhenResourceNotFound
+{
+    backlog = [[Backlog alloc] initWithURLFetcher:nil
+                            preferencesRepository:nil];
+    delegate = [OCMockObject mockForProtocol:@protocol(RepositoryDelegate)];
+    backlog.delegate = delegate;
+
+    NSPredicate *nameIsSudo = [NSPredicate predicateWithFormat:@"name = 'sudo make me a sandwich'"];
+    [backlog fetchFirstStoryInProgressWhere:nameIsSudo];
+
+    NSError *error = [NSError errorWithDomain:ERROR_DOMAIN
+                                         code:FETCHER_ERROR_NOT_FOUND
+                                     userInfo:@{NSLocalizedDescriptionKey: @"",
+                                                NSLocalizedFailureReasonErrorKey: @""}];
+
+    [[delegate expect] repository:backlog didFailToFetchWhere:nameIsSudo];
+    [backlog URLFetcher:nil didFailToFetchWithError:error];
     [delegate verify];
 }
 

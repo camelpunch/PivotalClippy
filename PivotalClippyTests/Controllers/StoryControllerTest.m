@@ -26,7 +26,15 @@
 
 - (void)testFailureToFetchStoryShowsAlert
 {
+    userNotifier = [OCMockObject mockForProtocol:@protocol(UserNotification)];
 
+    controller = [[StoryController alloc] initWithCopier:nil
+                                                notifier:userNotifier];
+
+    [[userNotifier expect] notifyWithTitle:@"Could not copy Tracker Story ID"
+                                  subtitle:@"Perhaps you're not allowed?"];
+    [controller repository:nil didFailToFetchWhere:nil];
+    [userNotifier verify];
 }
 
 @end

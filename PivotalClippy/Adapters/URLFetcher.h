@@ -12,7 +12,10 @@
 
 @protocol URLFetcherDelegate
 
-- (void)URLFetcher:(id <URLFetcher>)fetcher
+- (void)URLFetcher:(id<URLFetcher>)fetcher
     didFetchObject:(id)object;
+
+- (void)URLFetcher:(id<URLFetcher>)fetcher
+didFailToFetchWithError:(NSError *)error;
 
 @end

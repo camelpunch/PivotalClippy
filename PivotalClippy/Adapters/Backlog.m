@@ -58,6 +58,13 @@
     }
 }
 
+- (void)URLFetcher:(id<URLFetcher>)fetcher
+didFailToFetchWithError:(NSError *)error
+{
+    [self.delegate repository:self
+          didFailToFetchWhere:self.predicate];
+}
+
 #pragma mark - <NSObject>
 
 - (id)init
