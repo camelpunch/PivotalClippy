@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "Repository.h"
+#import "UserNotification.h"
 
-@interface Notifier : NSObject <RepositoryDelegate, NSUserNotificationCenterDelegate>
+@interface Notifier : NSObject <UserNotification>
 
 - (id)initWithNotificationCenter:(NSUserNotificationCenter *)aCenter;
 

@@ -9,17 +9,16 @@
     self = [super init];
     if (self) {
         center = aCenter;
-        center.delegate = self;
     }
     return self;
 }
 
-- (void)repository:(id<Repository>)aRepository
-        didPutItem:(id)anItem
+- (void)notifyWithTitle:(NSString *)aTitle
+               subtitle:(NSString *)aSubtitle
 {
     NSUserNotification *notification = [[NSUserNotification alloc] init];
-    notification.title = @"Tracker Story ID copied";
-    notification.subtitle = [NSString stringWithFormat:@"\"%@\" copied to clipboard", anItem];
+    notification.title = aTitle;
+    notification.subtitle = aSubtitle;
     [center deliverNotification:notification];
 }
 

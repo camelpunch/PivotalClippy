@@ -134,6 +134,7 @@
 		4967A59D182FB9FE00A7C32F /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Story.h; sourceTree = "<group>"; };
 		4967A5A0182FBA8F00A7C32F /* FetchingASingleStoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchingASingleStoryTest.m; sourceTree = "<group>"; };
 		4967A5A2183061CA00A7C32F /* StoryControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryControllerTest.m; sourceTree = "<group>"; };
+		4967A5A4183067B200A7C32F /* UserNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserNotification.h; sourceTree = "<group>"; };
 		49DF23F9182B3A6700147805 /* PreferencesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesTest.m; sourceTree = "<group>"; };
 		49DF23FA182B3A6700147805 /* StoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTest.m; sourceTree = "<group>"; };
 		49DF23FB182B3A6700147805 /* ValueSemantics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueSemantics.h; sourceTree = "<group>"; };
@@ -293,6 +294,7 @@
 				4967A54E182CAB0C00A7C32F /* PreferencesRepository.m */,
 				4967A4E8182B4ADA00A7C32F /* Repository.h */,
 				4967A597182F42A500A7C32F /* URLFetcher.h */,
+				4967A5A4183067B200A7C32F /* UserNotification.h */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";

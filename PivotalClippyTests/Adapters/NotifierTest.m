@@ -14,10 +14,11 @@
     center = [NSUserNotificationCenter defaultUserNotificationCenter];
     [center removeAllDeliveredNotifications];
     notifier = [[Notifier alloc] initWithNotificationCenter:center];
-    [notifier repository:nil didPutItem:@"some string"];
+    [notifier notifyWithTitle:@"Professor Yaffle" subtitle:@"and the mice"];
 
     NSPredicate *predicate = [NSPredicate predicateWithFormat:
-                              @"subtitle == '\"some string\" copied to clipboard'"];
+                              @"title == 'Professor Yaffle' AND "
+                              @"subtitle == 'and the mice'"];
     NSArray *matchingNotifications = [center.deliveredNotifications filteredArrayUsingPredicate:predicate];
     XCTAssertEqualObjects(@1, @(matchingNotifications.count));
 }

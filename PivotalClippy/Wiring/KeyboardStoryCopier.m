@@ -21,7 +21,8 @@
     if (self) {
         copier = [[Copier alloc] initWithPasteboard:[NSPasteboard generalPasteboard]];
         notifier = [[Notifier alloc] initWithNotificationCenter:[NSUserNotificationCenter defaultUserNotificationCenter]];
-        storyController = [[StoryController alloc] initWithCopier:copier];
+        storyController = [[StoryController alloc] initWithCopier:copier
+                                                         notifier:notifier];
         JSONFetcher *fetcher = [[JSONFetcher alloc] init];
         prefsRepo = [[PreferencesRepository alloc] initWithAccount:@"StoryTool"];
         backlog = [[Backlog alloc] initWithURLFetcher:fetcher
@@ -40,7 +41,7 @@
                                            handler:[keyDetector handler:^{
         prefsRepo.delegate = backlog;
         backlog.delegate = storyController;
-        copier.delegate = notifier;
+        copier.delegate = storyController;
 
         // TODO: un-hardcode story name - we probably get the predicate from the UI
         [backlog fetchFirstStoryInProgressWhere:[NSPredicate predicateWithFormat:@"name = 'Eligible story'"]];
