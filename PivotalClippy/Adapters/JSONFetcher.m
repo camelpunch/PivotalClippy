@@ -66,6 +66,13 @@
     [aDelegate URLFetcher:self.fetcher didFailToFetchWithError:fetcherError];
 }
 
+- (void)handle400Response:(NSHTTPURLResponse *)aResponse
+                   object:(id)anObject
+                 delegate:(id<URLFetcherDelegate>)aDelegate
+{
+    [self handle404Response:aResponse object:anObject delegate:aDelegate];
+}
+
 @end
 
 @interface JSONFetcher ()
