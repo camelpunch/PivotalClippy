@@ -3,6 +3,8 @@
 #import "Repository.h"
 #import "PreferencesController.h"
 #import "Preferences.h"
+#import "EmptyPromises.h"
+#import "KSDeferred.h"
 
 @interface PreferencesControllerTest : XCTestCase
 @end
@@ -10,39 +12,34 @@
 @implementation PreferencesControllerTest {
     PreferencesController *controller;
     Preferences *prefs;
-    id repo;
+    EmptyPromiseRepo *prefsRepo;
 }
 
-- (void)testFetchesPreviouslyStoredPreferences
+- (void)setUp
 {
-    repo = [OCMockObject mockForProtocol:@protocol(Repository)];
-    controller = [[PreferencesController alloc] initWithRepository:repo];
-    [controller loadWindow];
-
-    [[repo expect] fetchItem];
-    [controller windowDidLoad];
-    [repo verify];
+    [super setUp];
+    prefsRepo = [EmptyPromiseRepo new];
 }
 
 - (void)testShowsPreferencesInTextFields
 {
-    controller = [[PreferencesController alloc] initWithRepository:nil];
+    controller = [[PreferencesController alloc] initWithRepository:prefsRepo];
     prefs = [[Preferences alloc] initWithUsername:@"bobby"
                                             token:@"mytoken"
                                         projectID:@"234234"];
     [controller loadWindow];
+    [controller windowDidLoad];
+    [prefsRepo.fetchDeferred resolveWithValue:prefs];
 
-    [controller repository:nil didFetchItem:prefs];
-
-    XCTAssertEqualObjects(@"bobby", controller.username.stringValue);
-    XCTAssertEqualObjects(@"mytoken", controller.token.stringValue);
-    XCTAssertEqualObjects(@"234234", controller.projectID.stringValue);
+    XCTAssertEqualObjects(controller.username.stringValue, @"bobby");
+    XCTAssertEqualObjects(controller.token.stringValue, @"mytoken");
+    XCTAssertEqualObjects(controller.projectID.stringValue, @"234234");
 }
 
 - (void)testStoresPreferencesOnFieldBlur
 {
-    repo = [OCMockObject mockForProtocol:@protocol(Repository)];
-    controller = [[PreferencesController alloc] initWithRepository:repo];
+    id mockPrefsRepo = [OCMockObject mockForProtocol:@protocol(Repository)];
+    controller = [[PreferencesController alloc] initWithRepository:mockPrefsRepo];
     [controller loadWindow];
 
     prefs = [[Preferences alloc] initWithUsername:@"myusername"
@@ -53,34 +50,34 @@
     controller.token.stringValue = @"mytoken";
     controller.projectID.stringValue = @"123123";
 
-    [[repo expect] put:prefs];
+    [[mockPrefsRepo expect] put:prefs];
     [controller usernameDidBlur:nil];
-    [repo verify];
+    [mockPrefsRepo verify];
 
-    [[repo expect] put:prefs];
+    [[mockPrefsRepo expect] put:prefs];
     [controller tokenDidBlur:nil];
-    [repo verify];
+    [mockPrefsRepo verify];
 
-    [[repo expect] put:prefs];
+    [[mockPrefsRepo expect] put:prefs];
     [controller projectIDDidBlur:nil];
-    [repo verify];
+    [mockPrefsRepo verify];
 }
 
 - (void)testStoresPreferencesWhenWindowCloses
 {
-    repo = [OCMockObject mockForProtocol:@protocol(Repository)];
-    controller = [[PreferencesController alloc] initWithRepository:repo];
+    id mockPrefsRepo = [OCMockObject mockForProtocol:@protocol(Repository)];
+    controller = [[PreferencesController alloc] initWithRepository:mockPrefsRepo];
     [controller loadWindow];
 
     controller.username.stringValue = @"myusername";
     controller.token.stringValue = @"mytoken";
     controller.projectID.stringValue = @"567567";
 
-    [[repo expect] put:[[Preferences alloc] initWithUsername:@"myusername"
+    [[mockPrefsRepo expect] put:[[Preferences alloc] initWithUsername:@"myusername"
                                                        token:@"mytoken"
                                                    projectID:@"567567"]];
     [controller windowWillClose:nil];
-    [repo verify];
+    [mockPrefsRepo verify];
 }
 
 @end

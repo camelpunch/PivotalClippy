@@ -25,7 +25,6 @@
 		4967A535182B7FE800A7C32F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A534182B7FE800A7C32F /* Security.framework */; };
 		4967A536182B7FFC00A7C32F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A534182B7FE800A7C32F /* Security.framework */; };
 		4967A547182CA59800A7C32F /* NSNumber+TimeExpiry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A546182CA59800A7C32F /* NSNumber+TimeExpiry.m */; };
-		4967A54A182CA6DD00A7C32F /* RecordingDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A549182CA6DD00A7C32F /* RecordingDelegate.m */; };
 		4967A54F182CAB0C00A7C32F /* PreferencesRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A54E182CAB0C00A7C32F /* PreferencesRepository.m */; };
 		4967A555182CAB9400A7C32F /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A552182CAB9400A7C32F /* SSKeychain.m */; };
 		4967A556182CAB9400A7C32F /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A554182CAB9400A7C32F /* SSKeychainQuery.m */; };
@@ -45,9 +44,19 @@
 		4967A59F182FB9FE00A7C32F /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A59B182FB9FE00A7C32F /* Preferences.m */; };
 		4967A5A1182FBA8F00A7C32F /* FetchingASingleStoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A5A0182FBA8F00A7C32F /* FetchingASingleStoryTest.m */; };
 		4967A5A3183061CA00A7C32F /* StoryControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A5A2183061CA00A7C32F /* StoryControllerTest.m */; };
+		4998E4861831F93F00EE18B5 /* KSDeferred.m in Sources */ = {isa = PBXBuildFile; fileRef = 4998E4831831F93F00EE18B5 /* KSDeferred.m */; };
+		4998E4871831F93F00EE18B5 /* KSPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 4998E4851831F93F00EE18B5 /* KSPromise.m */; };
+		4998E48A183215E600EE18B5 /* UserRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 4998E489183215E600EE18B5 /* UserRepository.m */; };
+		49CDAC8318321B1100B3CCF9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDAC8218321B1100B3CCF9 /* User.m */; };
+		49CDAC8518321B3D00B3CCF9 /* UserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDAC8418321B3D00B3CCF9 /* UserTest.m */; };
 		49CDE180183078CE00F92452 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDE17F183078CE00F92452 /* Constants.m */; };
+		49DC499718398D6800C97608 /* ResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DC499618398D6800C97608 /* ResponseHandler.m */; };
+		49DC499A1839C03300C97608 /* ResponseHandlerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DC49991839C03300C97608 /* ResponseHandlerTest.m */; };
 		49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23F9182B3A6700147805 /* PreferencesTest.m */; };
 		49DF23FD182B3A6700147805 /* StoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DF23FA182B3A6700147805 /* StoryTest.m */; };
+		49EAEB041838C1E7006167B8 /* StoryBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4999B9011837FE020074EDF9 /* StoryBuilder.m */; };
+		49EAEB0618395C59006167B8 /* UserRepositoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EAEB0518395C59006167B8 /* UserRepositoryTest.m */; };
+		49EF83C018360E35004EDF2C /* EmptyPromises.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EF83BF18360E35004EDF2C /* EmptyPromises.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,8 +111,6 @@
 		4967A534182B7FE800A7C32F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4967A545182CA59800A7C32F /* NSNumber+TimeExpiry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+TimeExpiry.h"; sourceTree = "<group>"; };
 		4967A546182CA59800A7C32F /* NSNumber+TimeExpiry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+TimeExpiry.m"; sourceTree = "<group>"; };
-		4967A548182CA6DD00A7C32F /* RecordingDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordingDelegate.h; sourceTree = "<group>"; };
-		4967A549182CA6DD00A7C32F /* RecordingDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingDelegate.m; sourceTree = "<group>"; };
 		4967A54D182CAB0C00A7C32F /* PreferencesRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesRepository.h; sourceTree = "<group>"; };
 		4967A54E182CAB0C00A7C32F /* PreferencesRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesRepository.m; sourceTree = "<group>"; };
 		4967A551182CAB9400A7C32F /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
@@ -136,11 +143,29 @@
 		4967A5A0182FBA8F00A7C32F /* FetchingASingleStoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchingASingleStoryTest.m; sourceTree = "<group>"; };
 		4967A5A2183061CA00A7C32F /* StoryControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryControllerTest.m; sourceTree = "<group>"; };
 		4967A5A4183067B200A7C32F /* UserNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserNotification.h; sourceTree = "<group>"; };
+		4998E4821831F93F00EE18B5 /* KSDeferred.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSDeferred.h; sourceTree = "<group>"; };
+		4998E4831831F93F00EE18B5 /* KSDeferred.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSDeferred.m; sourceTree = "<group>"; };
+		4998E4841831F93F00EE18B5 /* KSPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPromise.h; sourceTree = "<group>"; };
+		4998E4851831F93F00EE18B5 /* KSPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPromise.m; sourceTree = "<group>"; };
+		4998E488183215E600EE18B5 /* UserRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRepository.h; sourceTree = "<group>"; };
+		4998E489183215E600EE18B5 /* UserRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRepository.m; sourceTree = "<group>"; };
+		4999B9001837FE020074EDF9 /* StoryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryBuilder.h; sourceTree = "<group>"; };
+		4999B9011837FE020074EDF9 /* StoryBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryBuilder.m; sourceTree = "<group>"; };
+		49CDAC8118321B1100B3CCF9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		49CDAC8218321B1100B3CCF9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		49CDAC8418321B3D00B3CCF9 /* UserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTest.m; sourceTree = "<group>"; };
 		49CDE17E183078CE00F92452 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		49CDE17F183078CE00F92452 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		49DC499518398D6800C97608 /* ResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseHandler.h; sourceTree = "<group>"; };
+		49DC499618398D6800C97608 /* ResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseHandler.m; sourceTree = "<group>"; };
+		49DC499818398EC200C97608 /* URLResponseHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLResponseHandler.h; sourceTree = "<group>"; };
+		49DC49991839C03300C97608 /* ResponseHandlerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseHandlerTest.m; sourceTree = "<group>"; };
 		49DF23F9182B3A6700147805 /* PreferencesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesTest.m; sourceTree = "<group>"; };
 		49DF23FA182B3A6700147805 /* StoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTest.m; sourceTree = "<group>"; };
 		49DF23FB182B3A6700147805 /* ValueSemantics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueSemantics.h; sourceTree = "<group>"; };
+		49EAEB0518395C59006167B8 /* UserRepositoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRepositoryTest.m; sourceTree = "<group>"; };
+		49EF83BE18360E35004EDF2C /* EmptyPromises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyPromises.h; sourceTree = "<group>"; };
+		49EF83BF18360E35004EDF2C /* EmptyPromises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyPromises.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,8 +321,13 @@
 				4967A54D182CAB0C00A7C32F /* PreferencesRepository.h */,
 				4967A54E182CAB0C00A7C32F /* PreferencesRepository.m */,
 				4967A4E8182B4ADA00A7C32F /* Repository.h */,
+				49DC499518398D6800C97608 /* ResponseHandler.h */,
+				49DC499618398D6800C97608 /* ResponseHandler.m */,
 				4967A597182F42A500A7C32F /* URLFetcher.h */,
+				49DC499818398EC200C97608 /* URLResponseHandler.h */,
 				4967A5A4183067B200A7C32F /* UserNotification.h */,
+				4998E488183215E600EE18B5 /* UserRepository.h */,
+				4998E489183215E600EE18B5 /* UserRepository.m */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -310,6 +340,8 @@
 				4967A56B182CBDAA00A7C32F /* KeyDetectorTest.m */,
 				4967A58D182EE4AD00A7C32F /* NotifierTest.m */,
 				4967A557182CB6B900A7C32F /* PreferencesRepositoryTest.m */,
+				49EAEB0518395C59006167B8 /* UserRepositoryTest.m */,
+				49DC49991839C03300C97608 /* ResponseHandlerTest.m */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -317,10 +349,12 @@
 		4967A544182CA55300A7C32F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				49EF83BE18360E35004EDF2C /* EmptyPromises.h */,
+				49EF83BF18360E35004EDF2C /* EmptyPromises.m */,
 				4967A545182CA59800A7C32F /* NSNumber+TimeExpiry.h */,
 				4967A546182CA59800A7C32F /* NSNumber+TimeExpiry.m */,
-				4967A548182CA6DD00A7C32F /* RecordingDelegate.h */,
-				4967A549182CA6DD00A7C32F /* RecordingDelegate.m */,
+				4999B9001837FE020074EDF9 /* StoryBuilder.h */,
+				4999B9011837FE020074EDF9 /* StoryBuilder.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -328,6 +362,10 @@
 		4967A550182CAB4800A7C32F /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				4998E4821831F93F00EE18B5 /* KSDeferred.h */,
+				4998E4831831F93F00EE18B5 /* KSDeferred.m */,
+				4998E4841831F93F00EE18B5 /* KSPromise.h */,
+				4998E4851831F93F00EE18B5 /* KSPromise.m */,
 				4967A551182CAB9400A7C32F /* SSKeychain.h */,
 				4967A552182CAB9400A7C32F /* SSKeychain.m */,
 				4967A553182CAB9400A7C32F /* SSKeychainQuery.h */,
@@ -339,10 +377,10 @@
 		4967A56D182DDA9A00A7C32F /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				4967A56E182DDAF300A7C32F /* KeyboardStoryCopier.h */,
-				4967A56F182DDAF300A7C32F /* KeyboardStoryCopier.m */,
 				49CDE17E183078CE00F92452 /* Constants.h */,
 				49CDE17F183078CE00F92452 /* Constants.m */,
+				4967A56E182DDAF300A7C32F /* KeyboardStoryCopier.h */,
+				4967A56F182DDAF300A7C32F /* KeyboardStoryCopier.m */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -359,10 +397,12 @@
 		4967A599182FB9B700A7C32F /* Values */ = {
 			isa = PBXGroup;
 			children = (
-				4967A59A182FB9FE00A7C32F /* Story.m */,
-				4967A59B182FB9FE00A7C32F /* Preferences.m */,
 				4967A59C182FB9FE00A7C32F /* Preferences.h */,
+				4967A59B182FB9FE00A7C32F /* Preferences.m */,
 				4967A59D182FB9FE00A7C32F /* Story.h */,
+				4967A59A182FB9FE00A7C32F /* Story.m */,
+				49CDAC8118321B1100B3CCF9 /* User.h */,
+				49CDAC8218321B1100B3CCF9 /* User.m */,
 			);
 			path = Values;
 			sourceTree = "<group>";
@@ -381,6 +421,7 @@
 			children = (
 				49DF23F9182B3A6700147805 /* PreferencesTest.m */,
 				49DF23FA182B3A6700147805 /* StoryTest.m */,
+				49CDAC8418321B3D00B3CCF9 /* UserTest.m */,
 				49DF23FB182B3A6700147805 /* ValueSemantics.h */,
 			);
 			path = Values;
@@ -486,7 +527,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CDAC8318321B1100B3CCF9 /* User.m in Sources */,
 				4967A4EE182B4C8E00A7C32F /* PreferencesController.m in Sources */,
+				4998E4871831F93F00EE18B5 /* KSPromise.m in Sources */,
 				4967A565182CB81C00A7C32F /* Copier.m in Sources */,
 				4967A55F182CB79400A7C32F /* KeyDetector.m in Sources */,
 				49CDE180183078CE00F92452 /* Constants.m in Sources */,
@@ -497,8 +540,11 @@
 				4967A521182B7E2A00A7C32F /* Backlog.m in Sources */,
 				4967A562182CB7BE00A7C32F /* StoryController.m in Sources */,
 				495240FC182A3017003F7F91 /* AppDelegate.m in Sources */,
+				49DC499718398D6800C97608 /* ResponseHandler.m in Sources */,
 				4967A570182DDAF300A7C32F /* KeyboardStoryCopier.m in Sources */,
 				495240F5182A3017003F7F91 /* main.m in Sources */,
+				4998E4861831F93F00EE18B5 /* KSDeferred.m in Sources */,
+				4998E48A183215E600EE18B5 /* UserRepository.m in Sources */,
 				4967A568182CB8B300A7C32F /* Notifier.m in Sources */,
 				4967A54F182CAB0C00A7C32F /* PreferencesRepository.m in Sources */,
 				4967A59F182FB9FE00A7C32F /* Preferences.m in Sources */,
@@ -513,14 +559,18 @@
 				4967A5A3183061CA00A7C32F /* StoryControllerTest.m in Sources */,
 				4967A56A182CB92600A7C32F /* CopierTest.m in Sources */,
 				4967A593182F29E100A7C32F /* JSONFetcherTest.m in Sources */,
+				49EAEB0618395C59006167B8 /* UserRepositoryTest.m in Sources */,
 				4967A547182CA59800A7C32F /* NSNumber+TimeExpiry.m in Sources */,
 				4967A55C182CB6E700A7C32F /* PreferencesControllerTest.m in Sources */,
+				49CDAC8518321B3D00B3CCF9 /* UserTest.m in Sources */,
 				4967A58E182EE4AD00A7C32F /* NotifierTest.m in Sources */,
 				4967A56C182CBDAA00A7C32F /* KeyDetectorTest.m in Sources */,
 				49DF23FC182B3A6700147805 /* PreferencesTest.m in Sources */,
 				4967A5A1182FBA8F00A7C32F /* FetchingASingleStoryTest.m in Sources */,
-				4967A54A182CA6DD00A7C32F /* RecordingDelegate.m in Sources */,
 				49DF23FD182B3A6700147805 /* StoryTest.m in Sources */,
+				49DC499A1839C03300C97608 /* ResponseHandlerTest.m in Sources */,
+				49EF83C018360E35004EDF2C /* EmptyPromises.m in Sources */,
+				49EAEB041838C1E7006167B8 /* StoryBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

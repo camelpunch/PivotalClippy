@@ -1,4 +1,5 @@
 #import "Copier.h"
+#import "KSDeferred.h"
 
 @implementation NothingToCopy
 @end
@@ -6,7 +7,6 @@
 @implementation Copier {
     NSPasteboard *pasteboard;
 }
-@synthesize delegate;
 
 - (id)initWithPasteboard:(NSPasteboard *)aPasteboard
 {
@@ -17,16 +17,20 @@
     return self;
 }
 
-- (void)put:(NSString *)someText
+- (KSPromise *)put:(id)copyable
 {
-    if (!someText)
+    if (!copyable)
         @throw [NothingToCopy exceptionWithName:@"Nothing to copy"
                                          reason:@"Provided string was nil"
                                        userInfo:nil];
-
     [pasteboard clearContents];
-    [pasteboard writeObjects:@[someText]];
-    [self.delegate repository:self didPutItem:someText];
+    NSString *stringifiedValue = [NSString stringWithFormat:@"%@", copyable];
+    [pasteboard writeObjects:@[stringifiedValue]];
+
+    KSDeferred *deferred = [KSDeferred defer];
+    [deferred resolveWithValue:stringifiedValue];
+
+    return deferred.promise;
 }
 
 #pragma mark - NSObject

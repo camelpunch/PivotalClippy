@@ -8,5 +8,6 @@
 - (void)testNotEqualWithDifferentProperties;
 - (void)testNotEqualToDifferentClass;
 - (void)testCopyable;
+- (void)testDoesNotRecognizeInit;
 
 @end

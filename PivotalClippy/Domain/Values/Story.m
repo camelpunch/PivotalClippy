@@ -1,9 +1,11 @@
 #import "Story.h"
+#import "User.h"
 
 @interface Story ()
 
 @property (copy, nonatomic, readwrite) NSNumber *storyID;
 @property (copy, nonatomic, readwrite) NSString *name;
+@property (copy, nonatomic, readwrite) NSNumber *ownerID;
 
 @end
 
@@ -11,11 +13,13 @@
 
 - (id)initWithStoryID:(NSNumber *)aStoryID
                  name:(NSString *)aName
+                owner:(User *)aUser
 {
     self = [super init];
     if (self) {
         self.storyID = aStoryID;
         self.name = aName;
+        self.ownerID = aUser.userID;
     }
     return self;
 }

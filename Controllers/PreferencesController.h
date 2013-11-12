@@ -1,7 +1,7 @@
 #import <Cocoa/Cocoa.h>
 #import "Repository.h"
 
-@interface PreferencesController : NSWindowController <RepositoryDelegate, NSWindowDelegate>
+@interface PreferencesController : NSWindowController <NSWindowDelegate>
 
 @property (weak) IBOutlet NSTextField *username;
 @property (weak) IBOutlet NSTextField *token;

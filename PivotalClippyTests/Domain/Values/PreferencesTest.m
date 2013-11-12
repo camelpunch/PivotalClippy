@@ -77,8 +77,8 @@
     a = [[Preferences alloc] initWithUsername:@"aaa"
                                         token:@"def"
                                     projectID:@"asdf"];
-    NSObject *other = [[NSObject alloc] init];
-    XCTAssertNotEqual(a, other);
+
+    XCTAssertNotEqual(a, [NSObject new]);
 }
 
 - (void)testCopyable
@@ -86,10 +86,13 @@
     a = [[Preferences alloc] initWithUsername:@"aaa"
                                         token:@"def"
                                     projectID:@"fds"];
-    b = [a copy];
 
-    XCTAssertEqualObjects(a, b);
-    XCTAssertNotEqual(a, b);
+    XCTAssertEqualObjects(a, [a copy]);
+}
+
+- (void)testDoesNotRecognizeInit
+{
+    XCTAssertThrows([[Preferences alloc] init]);
 }
 
 @end

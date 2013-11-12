@@ -1,6 +1,6 @@
 #import "PreferencesController.h"
-#import "Repository.h"
 #import "Preferences.h"
+#import "KSDeferred.h"
 
 @implementation PreferencesController {
     id <Repository> repo;
@@ -18,7 +18,16 @@
 - (void)windowDidLoad
 {
     [super windowDidLoad];
-    [repo fetchItem];
+    [[repo fetch]
+
+     then:^id(Preferences *prefs) {
+         [self.username setStringValue:prefs.username];
+         [self.token setStringValue:prefs.token];
+         [self.projectID setStringValue:prefs.projectID];
+         return nil;
+     }
+
+     error:nil];
 }
 
 #pragma mark - NSObject
@@ -27,16 +36,6 @@
 {
     [self doesNotRecognizeSelector:_cmd];
     return nil;
-}
-
-#pragma mark - <RepositoryDelegate>
-
-- (void)repository:(id<Repository>)aRepository
-      didFetchItem:(Preferences *)prefs
-{
-    [self.username setStringValue:prefs.username];
-    [self.token setStringValue:prefs.token];
-    [self.projectID setStringValue:prefs.projectID];
 }
 
 #pragma mark - <NSWindowDelegate>

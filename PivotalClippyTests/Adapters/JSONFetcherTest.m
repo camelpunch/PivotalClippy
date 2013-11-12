@@ -1,25 +1,46 @@
 #import <XCTest/XCTest.h>
 #import "JSONFetcher.h"
-#import "RecordingDelegate.h"
 #import "NSNumber+TimeExpiry.h"
+#import "KSDeferred.h"
+#import "EmptyPromises.h"
+
 
 @interface JSONFetcherTest : XCTestCase
-
-@property (nonatomic) NSURL *url;
-
 @end
+
 
 @implementation JSONFetcherTest {
     JSONFetcher *fetcher;
-    RecordingDelegate *delegate;
-    NSDate *start;
+    EmptyPromiseResponseHandler *handler;
 }
 
-- (void)testFetchesJSONFromTrackerAPI
+- (void)testFetchesSuccessJSONFromTrackerAPI
 {
-    delegate = [[RecordingDelegate alloc] init];
-    fetcher = [[JSONFetcher alloc] init];
-    fetcher.delegate = delegate;
+    handler = [EmptyPromiseResponseHandler new];
+    handler.resolveImmediately = YES;
+
+    fetcher = [[JSONFetcher alloc] initWithResponseHandler:handler];
+
+    NSString *urlString =
+    @"https://www.pivotaltracker.com/"
+    @"services/v5/projects/943206/stories?limit=1";
+
+    NSURL *url = [NSURL URLWithString:urlString];
+    KSPromise *promise = [fetcher fetchFromURL:url
+                                       headers:@{}];
+    [promise waitForValueWithTimeout:5];
+
+    XCTAssertEqualObjects(@(handler.response.statusCode), @(200));
+    XCTAssertEqualObjects(handler.obj[0][@"story_type"], @"feature");
+    XCTAssert(promise.value);
+}
+
+- (void)testFetchesErrorJSONFromTrackerAPI
+{
+    handler = [EmptyPromiseResponseHandler new];
+    handler.rejectImmediately = YES;
+
+    fetcher = [[JSONFetcher alloc] initWithResponseHandler:handler];
 
     NSString *urlString = [NSString stringWithFormat:
                            @"https://www.pivotaltracker.com/"
@@ -27,56 +48,13 @@
                            @"mywork%3Abrucie+state%3Astarted"];
 
     NSURL *url = [NSURL URLWithString:urlString];
-    [fetcher fetchFromURL:url headers:@{@"X-Tracker-Token": @"projectistotallyopen"}];
+    KSPromise *promise = [fetcher fetchFromURL:url
+                                       headers:@{@"X-TrackerToken": @"deliberatelybadtoken"}];
+    [promise waitForValueWithTimeout:5];
 
-    start = [NSDate date];
-    while (!delegate.receivedItem && [@5 secondsNotYetPassedSince:start]) { [@1 secondWait]; }
-
-    NSArray *names = [delegate.receivedItem valueForKey:@"name"];
-    XCTAssertEqualObjects(names, @[@"Eligible story"]);
-}
-
-- (void)testDelegateIsToldAbout404
-{
-    delegate = [[RecordingDelegate alloc] init];
-    fetcher = [[JSONFetcher alloc] init];
-    fetcher.delegate = delegate;
-
-    NSString *urlString = [NSString stringWithFormat:
-                           @"https://www.pivotaltracker.com/"
-                           "services/v5/projects/999999/stories?filter=%@&limit=1",
-                           @"mywork%3Abrucie+state%3Astarted"];
-
-    NSURL *url = [NSURL URLWithString:urlString];
-    [fetcher fetchFromURL:url headers:@{@"X-Tracker-Token": @"notgoingtowork"}];
-
-    start = [NSDate date];
-    while (!delegate.receivedItem && [@5 secondsNotYetPassedSince:start]) { [@1 secondWait]; }
-
-    NSError *error = delegate.receivedItem;
-    XCTAssertEqualObjects(error.localizedDescription, @"Couldn't access resource");
-    XCTAssertEqualObjects(error.localizedFailureReason, @"You probably don't have permission.");
-}
-
-- (void)testDelegateIsToldAbout400
-{
-    delegate = [[RecordingDelegate alloc] init];
-    fetcher = [[JSONFetcher alloc] init];
-    fetcher.delegate = delegate;
-
-    NSString *urlString = [NSString stringWithFormat:
-                           @"https://www.pivotaltracker.com/"
-                           "services/v5/projects/943206/stories?with_state=foo"];
-
-    NSURL *url = [NSURL URLWithString:urlString];
-    [fetcher fetchFromURL:url headers:@{@"X-Tracker-Token": @"notgoingtowork"}];
-
-    start = [NSDate date];
-    while (!delegate.receivedItem && [@5 secondsNotYetPassedSince:start]) { [@1 secondWait]; }
-
-    NSError *error = delegate.receivedItem;
-    XCTAssertEqualObjects(error.localizedDescription, @"Couldn't access resource");
-    XCTAssertEqualObjects(error.localizedFailureReason, @"You probably don't have permission.");
+    XCTAssertEqualObjects(@(handler.response.statusCode), @(403));
+    XCTAssertEqualObjects(handler.obj[@"code"], @"invalid_authentication");
+    XCTAssert(promise.error);
 }
 
 @end

@@ -1,6 +1,6 @@
 #import <XCTest/XCTest.h>
-#import <OCMock/OCMock.h>
 #import "Copier.h"
+#import "KSDeferred.h"
 
 @interface CopierTest : XCTestCase
 @end
@@ -8,7 +8,6 @@
 @implementation CopierTest {
     NSPasteboard *pasteboard;
     Copier *copier;
-    id delegate;
 }
 
 - (void)testOverwritesContentsOfConfiguredPasteboardWithProvidedText
@@ -16,22 +15,23 @@
     pasteboard = [NSPasteboard pasteboardWithUniqueName];
     [pasteboard writeObjects:@[@"existing content"]];
 
-    [[[Copier alloc] initWithPasteboard:pasteboard] put:@"new content"];
-    NSArray *items = [pasteboard readObjectsForClasses:@[[NSString class]] options:nil];
+    copier = [[Copier alloc] initWithPasteboard:pasteboard];
+    KSPromise *promise = [copier put:@"new content"];
+    NSArray *itemsCopied = [pasteboard readObjectsForClasses:@[[NSString class]] options:nil];
 
-    XCTAssertEqualObjects(@[@"new content"], items);
+    XCTAssertEqualObjects(@[@"new content"], itemsCopied);
+    XCTAssertEqualObjects(promise.value, @"new content");
 }
 
-- (void)testNotifiesItsDelegate
+- (void)testCopiesNumbersAsStrings
 {
-    copier = [[Copier alloc] initWithPasteboard:nil];
-    delegate = [OCMockObject mockForProtocol:@protocol(RepositoryDelegate)];
-    copier.delegate = delegate;
+    pasteboard = [NSPasteboard pasteboardWithUniqueName];
+    copier = [[Copier alloc] initWithPasteboard:pasteboard];
+    KSPromise *promise = [copier put:@12345];
+    NSArray *itemsCopied = [pasteboard readObjectsForClasses:@[[NSString class]] options:nil];
 
-    [[delegate expect] repository:copier
-                       didPutItem:@"some text"];
-    [copier put:@"some text"];
-    [delegate verify];
+    XCTAssertEqualObjects(itemsCopied, @[@"12345"]);
+    XCTAssertEqualObjects(promise.value, @"12345");
 }
 
 - (void)testRaisesExceptionWhenPuttingNil

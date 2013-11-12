@@ -5,7 +5,10 @@
 #import "PreferencesRepository.h"
 #import "Notifier.h"
 #import "StoryController.h"
+#import "UserRepository.h"
 #import "JSONFetcher.h"
+#import "ResponseHandler.h"
+
 
 @implementation KeyboardStoryCopier {
     KeyDetector *keyDetector;
@@ -14,6 +17,7 @@
     PreferencesRepository *prefsRepo;
     StoryController *storyController;
     Notifier *notifier;
+    UserRepository *userRepo;
 }
 
 - (id)init
@@ -22,13 +26,22 @@
     if (self) {
         copier = [[Copier alloc] initWithPasteboard:[NSPasteboard generalPasteboard]];
         notifier = [[Notifier alloc] initWithNotificationCenter:[NSUserNotificationCenter defaultUserNotificationCenter]];
-        storyController = [[StoryController alloc] initWithCopier:copier
-                                                         notifier:notifier];
-        JSONFetcher *fetcher = [[JSONFetcher alloc] init];
         prefsRepo = [[PreferencesRepository alloc] initWithAccount:@"StoryTool"];
-        backlog = [[Backlog alloc] initWithURLFetcher:fetcher
+
+        ResponseHandler *handler = [ResponseHandler new];
+        JSONFetcher *userFetcher = [[JSONFetcher alloc] initWithResponseHandler:handler];
+        userRepo = [[UserRepository alloc] initWithPreferencesRepository:prefsRepo
+                                                              urlFetcher:userFetcher];
+
+        JSONFetcher *storyFetcher = [[JSONFetcher alloc] initWithResponseHandler:handler];
+        backlog = [[Backlog alloc] initWithURLFetcher:storyFetcher
                                 preferencesRepository:prefsRepo];
-        fetcher.delegate = backlog;
+
+        storyController = [[StoryController alloc] initWithCopier:copier
+                                                         notifier:notifier
+                                                   userRepository:userRepo
+                                                          backlog:backlog];
+
         NSUInteger highSmash = NSCommandKeyMask | NSControlKeyMask | NSAlternateKeyMask | NSShiftKeyMask;
         keyDetector = [[KeyDetector alloc] initWithKey:@"S"
                                              modifiers:highSmash];
@@ -40,12 +53,7 @@
 {
     [NSEvent addGlobalMonitorForEventsMatchingMask:NSKeyDownMask
                                            handler:[keyDetector handler:^{
-        prefsRepo.delegate = backlog;
-        backlog.delegate = storyController;
-        copier.delegate = storyController;
-
-        // TODO: un-hardcode story name - we probably get the predicate from the UI
-        [backlog fetchFirstStoryInProgressWhere:[NSPredicate predicateWithFormat:@"name = 'Eligible story'"]];
+        [storyController copyCurrentUsersStory];
     }]];
 }
 

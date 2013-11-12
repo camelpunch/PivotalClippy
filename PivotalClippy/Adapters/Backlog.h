@@ -2,11 +2,12 @@
 #import "Repository.h"
 #import "URLFetcher.h"
 
-@interface Backlog : NSObject <Repository, RepositoryDelegate, URLFetcherDelegate>
+@class User;
+@interface Backlog : NSObject <StoryRepository>
 
-- (id)initWithURLFetcher:(id <URLFetcher>)fetcher
-   preferencesRepository:(id <Repository>)prefsRepo;
+- (id)initWithURLFetcher:(id<URLFetcher>)fetcher
+   preferencesRepository:(id<Repository>)prefsRepo;
 
-- (void)fetchFirstStoryInProgressWhere:(NSPredicate *)predicate;
+- (KSPromise *)fetchCurrentStoryForUser:(User *)aUser;
 
 @end

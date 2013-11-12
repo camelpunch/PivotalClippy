@@ -1,12 +1,20 @@
 #import "ValueSemantics.h"
 #import "Story.h"
+#import "StoryBuilder.h"
 
 @interface StoryTest : XCTestCase <ValueSemantics>
 @end
 
 @implementation StoryTest {
+    StoryBuilder *builder;
     Story *a;
     Story *b;
+}
+
+- (void)setUp
+{
+    [super setUp];
+    builder = [StoryBuilder new];
 }
 
 #pragma mark - <ValueSemantics>
@@ -14,64 +22,59 @@
 - (void)testHasImmutableProperties
 {
     NSMutableString *changingString = [NSMutableString stringWithString:@"Andrew"];
-    a = [[Story alloc] initWithStoryID:@123
-                                  name:changingString];
+    a = [[[builder
+           storyID:@123]
+          name:changingString]
+         build];
     [changingString appendString:@" Bruce"];
     XCTAssertEqualObjects(@"Andrew", a.name);
 }
 
 - (void)testEqualWithSameProperties
 {
-    a = [[Story alloc] initWithStoryID:@123
-                                  name:@"Foo"];
-    b = [[Story alloc] initWithStoryID:@123
-                                  name:@"Foo"];
+    [[builder
+      storyID:@123]
+     name:@"Foo"];
 
-    XCTAssertEqualObjects(a, b);
+    XCTAssertEqualObjects([builder build],
+                          [builder build]);
 }
 
 - (void)testEqualWithNilProperties
 {
-    a = [[Story alloc] initWithStoryID:nil
-                                  name:nil];
-    b = [[Story alloc] initWithStoryID:nil
-                                  name:nil];
-
-    XCTAssertEqualObjects(a, b);
+    XCTAssertEqualObjects([builder build],
+                          [builder build]);
 }
 
 - (void)testNotEqualWithDifferentProperties
 {
-    a = [[Story alloc] initWithStoryID:@234
-                                  name:@"same"];
-    b = [[Story alloc] initWithStoryID:@456
-                                  name:@"same"];
+    a = [[[builder storyID:@234] name:@"same"] build];
+    b = [[builder storyID:@456] build];
 
     XCTAssertNotEqualObjects(a, b);
 
-    a = [[Story alloc] initWithStoryID:@234
-                                  name:@"wildy"];
-    b = [[Story alloc] initWithStoryID:@234
-                                  name:@"different"];
+    a = [[builder name:@"wildly"] build];
+    b = [[builder name:@"different"] build];
 
     XCTAssertNotEqualObjects(a, b);
 }
 
 - (void)testNotEqualToDifferentClass
 {
-    a = [[Story alloc] initWithStoryID:@234
-                                  name:@"same"];
-    NSObject *other = [[NSObject alloc] init];
-    XCTAssertNotEqual(a, other);
+    XCTAssertNotEqual([builder build], [NSObject new]);
 }
 
 - (void)testCopyable
 {
-    a = [[Story alloc] initWithStoryID:@123
-                                  name:@"Foo"];
+    a = [[[builder storyID:@123] name:@"Foo"] build];
     b = [a copy];
 
     XCTAssertEqualObjects(a, b);
+}
+
+- (void)testDoesNotRecognizeInit
+{
+    XCTAssertThrows([[Story alloc] init]);
 }
 
 @end

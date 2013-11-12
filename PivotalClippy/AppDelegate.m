@@ -16,7 +16,6 @@
 
     PreferencesRepository *guiPrefsRepo = [[PreferencesRepository alloc] initWithAccount:@"StoryTool"];
     prefsController = [[PreferencesController alloc] initWithRepository:guiPrefsRepo];
-    guiPrefsRepo.delegate = prefsController;
 
     KeyboardStoryCopier *copier = [[KeyboardStoryCopier alloc] init];
     [copier monitorKeyPress];

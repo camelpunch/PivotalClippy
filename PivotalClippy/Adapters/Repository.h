@@ -1,27 +1,19 @@
 #import <Foundation/Foundation.h>
 
-@protocol Repository;
-@protocol RepositoryDelegate <NSObject>
+@class KSPromise, User;
+@protocol StoryRepository <NSObject>
 
-@optional
-
-- (void)repository:(id <Repository>)aRepository
-      didFetchItem:(id)anItem;
-- (void) repository:(id <Repository>)aRepository
-didFailToFetchWhere:(NSPredicate *)predicate;
-
-- (void)repository:(id<Repository>)aRepository
-        didPutItem:(id)anItem;
+- (KSPromise *)fetchCurrentStoryForUser:(User *)aUser;
 
 @end
 
+
+@class KSPromise;
 @protocol Repository <NSObject>
 
 @optional
 
-@property (weak, nonatomic) id <RepositoryDelegate> delegate;
-
-- (void)fetchItem;
-- (void)put:(id)anItem;
+- (KSPromise *)fetch;
+- (KSPromise *)put:(id)anItem;
 
 @end

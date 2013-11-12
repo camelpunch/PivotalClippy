@@ -1,41 +1,59 @@
 #import "JSONFetcher.h"
-#import "Constants.h"
-#import <objc/message.h>
+#import "KSDeferred.h"
 
-@interface ResponseHandler : NSObject
 
-- (id)initWithFetcher:(id<URLFetcher>)aFetcher;
-- (void)handleResponse:(NSURLResponse *)aResponse
-                object:(id)anObject
-              delegate:(id<URLFetcherDelegate>)aDelegate;
+@interface JSONFetcher ()
+
+@property (nonatomic) NSURLSessionConfiguration *config;
+@property (nonatomic) id<URLResponseHandler> handler;
 
 @end
 
-@interface ResponseHandler ()
-@property (nonatomic) id<URLFetcher> fetcher;
-@property (nonatomic) id<URLFetcherDelegate> delegate;
-@end
 
-@implementation ResponseHandler
+@implementation JSONFetcher
 
-- (id)initWithFetcher:(id<URLFetcher>)aFetcher
+- (id)initWithResponseHandler:(id<URLResponseHandler>)aHandler
 {
     self = [super init];
     if (self) {
-        self.fetcher = aFetcher;
+        self.config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        self.handler = aHandler;
     }
     return self;
 }
 
-- (void)handleResponse:(NSURLResponse *)aResponse
-                object:(id)anObject
-              delegate:(id<URLFetcherDelegate>)aDelegate
+- (KSPromise *)fetchFromURL:(NSURL *)url
+                    headers:(NSDictionary *)headers
 {
-    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)aResponse;
-    NSString *selectorName = [NSString stringWithFormat:@"handle%@Response:object:delegate:",
-                              @(httpResponse.statusCode)];
-    SEL selector = NSSelectorFromString(selectorName);
-    objc_msgSend(self, selector, httpResponse, anObject, aDelegate);
+    [self.config setHTTPAdditionalHeaders:headers];
+
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:self.config];
+
+    KSDeferred *deferred = [KSDeferred defer];
+
+    __weak __typeof(self) weakSelf = self;
+    NSURLSessionTask *task =
+    [session dataTaskWithURL:url
+           completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+               id obj = [NSJSONSerialization JSONObjectWithData:data
+                                                        options:0
+                                                          error:nil];
+               [[weakSelf.handler handleResponse:response
+                                          object:obj]
+
+                then:^id(id value) {
+                    [deferred resolveWithValue:value];
+                    return nil;
+                }
+
+                error:^id(NSError *error) {
+                    [deferred rejectWithError:error];
+                    return nil;
+                }];
+           }];
+    [task resume];
+
+    return deferred.promise;
 }
 
 #pragma mark - <NSObject>
@@ -44,76 +62,6 @@
 {
     [self doesNotRecognizeSelector:_cmd];
     return nil;
-}
-
-#pragma mark - Private
-
-- (void)handle200Response:(NSHTTPURLResponse *)aResponse
-                   object:(id)anObject
-                 delegate:(id<URLFetcherDelegate>)aDelegate
-{
-    [aDelegate URLFetcher:self.fetcher didFetchObject:anObject];
-}
-
-- (void)handle404Response:(NSHTTPURLResponse *)aResponse
-                   object:(id)anObject
-                 delegate:(id<URLFetcherDelegate>)aDelegate
-{
-    NSError *fetcherError = [NSError errorWithDomain:ERROR_DOMAIN
-                                                code:FETCHER_ERROR_NOT_FOUND
-                                            userInfo:@{NSLocalizedDescriptionKey: @"Couldn't access resource",
-                                                       NSLocalizedFailureReasonErrorKey: @"You probably don't have permission."}];
-    [aDelegate URLFetcher:self.fetcher didFailToFetchWithError:fetcherError];
-}
-
-- (void)handle400Response:(NSHTTPURLResponse *)aResponse
-                   object:(id)anObject
-                 delegate:(id<URLFetcherDelegate>)aDelegate
-{
-    [self handle404Response:aResponse object:anObject delegate:aDelegate];
-}
-
-@end
-
-@interface JSONFetcher ()
-
-@property (nonatomic) NSURLSessionConfiguration *config;
-@property (nonatomic) ResponseHandler *handler;
-
-@end
-
-@implementation JSONFetcher
-@synthesize delegate;
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        self.config = [NSURLSessionConfiguration defaultSessionConfiguration];
-        self.handler = [[ResponseHandler alloc] initWithFetcher:self];
-    }
-    return self;
-}
-
-- (void)fetchFromURL:(NSURL *)url
-             headers:(NSDictionary *)headers
-{
-    [self.config setHTTPAdditionalHeaders:headers];
-
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:self.config];
-
-    JSONFetcher * __weak weakSelf = self;
-    NSURLSessionTask *task =
-    [session dataTaskWithURL:url
-           completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-               id obj = [NSJSONSerialization JSONObjectWithData:data
-                                                        options:0
-                                                          error:nil];
-               [self.handler handleResponse:response
-                                     object:obj
-                                   delegate:weakSelf.delegate];
-           }];
-    [task resume];
 }
 
 @end

@@ -45,26 +45,24 @@
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    return [[Preferences alloc] initWithUsername:self.username
-                                           token:self.token
-                                       projectID:self.projectID];
+    return self;
 }
 
 #pragma mark - Private
 
 - (BOOL)isEqualToPreferences:(Preferences *)other
 {
-    return [self stringEqualityForOther:other selector:@selector(username)] &&
-    [self stringEqualityForOther:other selector:@selector(token)] &&
-    [self stringEqualityForOther:other selector:@selector(projectID)];
+    return [self equalityForOther:other selector:@selector(username)] &&
+    [self equalityForOther:other selector:@selector(token)] &&
+    [self equalityForOther:other selector:@selector(projectID)];
 }
 
-- (BOOL)stringEqualityForOther:(Preferences *)other
-                      selector:(SEL)selector
+- (BOOL)equalityForOther:(id)other
+                selector:(SEL)selector
 {
-    NSString *value1 = objc_msgSend(self, selector);
-    NSString *value2 = objc_msgSend(other, selector);
-    return [value1 isEqualToString:value2] || !(value1 || value2);
+    NSString *a = objc_msgSend(self, selector);
+    NSString *b = objc_msgSend(other, selector);
+    return [a isEqual:b] || !(a || b);
 }
 
 @end

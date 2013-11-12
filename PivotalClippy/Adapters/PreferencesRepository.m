@@ -1,12 +1,12 @@
 #import "PreferencesRepository.h"
 #import "Preferences.h"
 #import "SSKeychain.h"
+#import "KSDeferred.h"
 
 @implementation PreferencesRepository {
     NSString *account;
     NSString *service;
 }
-@synthesize delegate;
 
 - (id)initWithAccount:(NSString *)anAccount
 {
@@ -18,19 +18,29 @@
     return self;
 }
 
-- (void)fetchItem
+- (KSPromise *)fetch
 {
+    KSDeferred *deferred = [KSDeferred defer];
     NSString *serializedPrefs = [SSKeychain passwordForService:service
                                                        account:account];
-    [self.delegate repository:self
-                 didFetchItem:[self deserializedPrefs:serializedPrefs]];
+    [deferred resolveWithValue:[self deserializedPrefs:serializedPrefs]];
+    return deferred.promise;
 }
 
-- (void)put:(Preferences *)prefs
+- (KSPromise *)put:(Preferences *)prefs
 {
-    [SSKeychain setPassword:[self serializedPrefs:prefs]
-                 forService:service
-                    account:account];
+    KSDeferred *deferred = [KSDeferred defer];
+
+    [deferred.promise then:^id(id value) {
+        [SSKeychain setPassword:[self serializedPrefs:prefs]
+                     forService:service
+                        account:account];
+        return value;
+    } error:nil];
+
+    [deferred resolveWithValue:nil];
+
+    return deferred.promise;
 }
 
 #pragma mark - NSObject
