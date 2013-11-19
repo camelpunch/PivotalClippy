@@ -54,4 +54,18 @@
     XCTAssertEqualObjects(promise.value, user);
 }
 
+- (void)testBreaksPromiseIfTrackerFetchFails
+{
+    userRepo = [[UserRepository alloc] initWithPreferencesRepository:prefsRepo
+                                                          urlFetcher:urlFetcher];
+    KSPromise *promise = [userRepo fetch];
+
+    prefs = [[Preferences alloc] initWithUsername:@"johnsmith" token:@"asdf" projectID:@"56789"];
+    [prefsRepo.fetchDeferred resolveWithValue:prefs];
+
+    [urlFetcher.fetchDeferred rejectWithError:[NSError new]];
+
+    XCTAssert(promise.error);
+}
+
 @end

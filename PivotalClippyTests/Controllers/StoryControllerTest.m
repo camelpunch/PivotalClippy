@@ -88,7 +88,25 @@
     [userNotifierMock verify];
 }
 
+- (void)testFailureToFetchUserShowsAlert
+{
+    [self assertShowsError:@"Couldn't fetch Tracker user"
+                     block:^(NSError *error) {
+        [userRepo.fetchDeferred rejectWithError:error];
+    }];
+}
+
 - (void)testFailureToFetchStoryShowsAlert
+{
+    [self assertShowsError:@"Couldn't fetch Tracker story"
+                     block:^(NSError *error) {
+        [userRepo.fetchDeferred resolveWithValue:user];
+        [backlog.deferred rejectWithError:error];
+    }];
+}
+
+- (void)assertShowsError:(NSString *)subtitle
+                   block:(void (^)(NSError *error))block
 {
     id userNotifierMock = [OCMockObject mockForProtocol:@protocol(UserNotification)];
     controller = [[StoryController alloc] initWithCopier:copier
@@ -96,16 +114,15 @@
                                           userRepository:userRepo
                                                  backlog:backlog];
     [controller copyCurrentUsersStory];
-    [userRepo.fetchDeferred resolveWithValue:user];
 
-    NSError *error = [NSError errorWithDomain:@"ace"
+    NSError *error = [NSError errorWithDomain:@"fakedomain"
                                          code:0
                                      userInfo:@{}];
     [[userNotifierMock expect]
      notifyWithTitle:@"Could not copy Tracker Story ID"
-     subtitle:@"Perhaps you're not allowed?"];
+     subtitle:subtitle];
 
-    [backlog.deferred rejectWithError:error];
+    block(error);
 
     [userNotifierMock verify];
 }

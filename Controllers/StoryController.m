@@ -50,21 +50,27 @@
                    return nil;
                }
 
-               error:nil];
+               error:^id(NSError *error) {
+                   return nil;
+               }];
 
               return nil;
           }
 
           error:^id(NSError *error) {
               [notifier notifyWithTitle:@"Could not copy Tracker Story ID"
-                               subtitle:@"Perhaps you're not allowed?"];
-              return error;
+                               subtitle:@"Couldn't fetch Tracker story"];
+              return nil;
           }];
 
          return nil;
      }
 
-     error:nil];
+     error:^id(NSError *error) {
+         [notifier notifyWithTitle:@"Could not copy Tracker Story ID"
+                          subtitle:@"Couldn't fetch Tracker user"];
+         return nil;
+     }];
 }
 
 #pragma mark - NSObject

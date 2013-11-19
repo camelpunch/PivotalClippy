@@ -45,12 +45,17 @@
               return nil;
           }
 
-          error:nil];
+          error:^id(NSError *error) {
+              [deferred rejectWithError:error];
+              return nil;
+          }];
 
          return nil;
      }
 
-     error:nil];
+     error:^id(NSError *error) {
+         return nil;
+     }];
 
     return deferred.promise;
 }
