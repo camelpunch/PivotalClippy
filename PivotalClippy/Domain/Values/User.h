@@ -8,4 +8,6 @@
 - (id)initWithID:(NSNumber *)userID
         username:(NSString *)username;
 
+- (BOOL)isEqualToUser:(User *)other;
+
 @end

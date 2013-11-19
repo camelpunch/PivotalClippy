@@ -37,18 +37,16 @@
     return [NSString stringWithFormat:@"Preferences: %@ / %@ / %@", self.username, self.token, self.projectID];
 }
 
-- (BOOL)isEqual:(id)object
-{
-    return [object isKindOfClass:[self class]] &&
-    [self isEqualToPreferences:object];
-}
-
 - (id)copyWithZone:(NSZone *)zone
 {
     return self;
 }
 
-#pragma mark - Private
+- (BOOL)isEqual:(id)object
+{
+    return [object isKindOfClass:[self class]] &&
+    [self isEqualToPreferences:object];
+}
 
 - (BOOL)isEqualToPreferences:(Preferences *)other
 {
@@ -56,6 +54,8 @@
     [self equalityForOther:other selector:@selector(token)] &&
     [self equalityForOther:other selector:@selector(projectID)];
 }
+
+#pragma mark - Private
 
 - (BOOL)equalityForOther:(id)other
                 selector:(SEL)selector

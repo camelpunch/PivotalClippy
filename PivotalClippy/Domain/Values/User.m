@@ -42,8 +42,6 @@
     return nil;
 }
 
-#pragma mark - Private
-
 - (BOOL)isEqualToUser:(User *)other
 {
     return

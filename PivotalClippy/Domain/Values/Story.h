@@ -11,4 +11,6 @@
                  name:(NSString *)aName
                 owner:(User *)aUser;
 
+- (BOOL)isEqualToStory:(Story *)otherStory;
+
 @end

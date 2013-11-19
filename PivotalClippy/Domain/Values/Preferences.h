@@ -10,4 +10,6 @@
                  token:(NSString *)aToken
              projectID:(NSString *)aProjectID;
 
+- (BOOL)isEqualToPreferences:(Preferences *)other;
+
 @end
