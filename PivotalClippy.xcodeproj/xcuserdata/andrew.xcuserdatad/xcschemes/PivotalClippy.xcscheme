@@ -37,6 +37,11 @@
                BlueprintName = "PivotalClippyTests"
                ReferencedContainer = "container:PivotalClippy.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "JSONFetcherTest">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
