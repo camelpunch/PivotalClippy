@@ -45,21 +45,21 @@
 
                then:^id(NSString *copiedText) {
                    [notifier notifyWithTitle:@"Tracker Story ID copied"
-                                    subtitle:[NSString stringWithFormat:@"'%@' copied to clipboard",
-                                              copiedText]];
+                                    subtitle:[NSString stringWithFormat:@"%@ (%@)",
+                                              copiedText, story.name]];
                    return nil;
                }
 
-               error:^id(NSError *error) {
-                   [notifier notifyWithTitle:@"Could not copy Tracker Story ID"
-                                    subtitle:@"Perhaps you're not allowed?"];
-                   return error;
-               }];
+               error:nil];
 
               return nil;
           }
 
-          error:nil];
+          error:^id(NSError *error) {
+              [notifier notifyWithTitle:@"Could not copy Tracker Story ID"
+                               subtitle:@"Perhaps you're not allowed?"];
+              return error;
+          }];
 
          return nil;
      }

@@ -64,7 +64,7 @@
     [copierMock verify];
 }
 
-- (void)testSuccessfulCopyShowsAlert
+- (void)testSuccessfulCopyNotifiesUser
 {
     id userNotifierMock = [OCMockObject mockForProtocol:@protocol(UserNotification)];
     controller = [[StoryController alloc] initWithCopier:copier
@@ -73,13 +73,17 @@
                                                  backlog:backlog];
     [controller copyCurrentUsersStory];
     [userRepo.fetchDeferred resolveWithValue:nil];
-    [backlog.deferred resolveWithValue:nil];
+
+    story = [[Story alloc] initWithStoryID:@98765
+                                      name:@"Clearer notifications"
+                                     owner:nil];
+    [backlog.deferred resolveWithValue:story];
 
     [[userNotifierMock expect]
      notifyWithTitle:@"Tracker Story ID copied"
-     subtitle:@"'someid' copied to clipboard"];
+     subtitle:@"98765 (Clearer notifications)"];
 
-    [copier.putDeferred resolveWithValue:@"someid"];
+    [copier.putDeferred resolveWithValue:@"98765"];
 
     [userNotifierMock verify];
 }
@@ -93,7 +97,6 @@
                                                  backlog:backlog];
     [controller copyCurrentUsersStory];
     [userRepo.fetchDeferred resolveWithValue:user];
-    [backlog.deferred resolveWithValue:story];
 
     NSError *error = [NSError errorWithDomain:@"ace"
                                          code:0
@@ -102,7 +105,7 @@
      notifyWithTitle:@"Could not copy Tracker Story ID"
      subtitle:@"Perhaps you're not allowed?"];
 
-    [copier.putDeferred rejectWithError:error];
+    [backlog.deferred rejectWithError:error];
 
     [userNotifierMock verify];
 }
