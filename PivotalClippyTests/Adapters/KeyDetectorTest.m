@@ -1,4 +1,4 @@
-#import <XCTest/XCTest.h>
+@import XCTest;
 #import "KeyDetector.h"
 
 @interface KeyDetectorTest : XCTestCase

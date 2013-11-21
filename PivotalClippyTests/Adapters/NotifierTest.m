@@ -1,4 +1,4 @@
-#import <XCTest/XCTest.h>
+@import XCTest;
 #import "Notifier.h"
 
 @interface NotifierTest : XCTestCase

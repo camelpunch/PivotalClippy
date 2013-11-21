@@ -1,4 +1,4 @@
-#import <Cocoa/Cocoa.h>
+@import Cocoa;
 #import "Repository.h"
 
 @interface PreferencesController : NSWindowController <NSWindowDelegate>

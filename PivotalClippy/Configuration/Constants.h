@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 FOUNDATION_EXPORT NSString *const ERROR_DOMAIN;
 FOUNDATION_EXPORT int const FETCHER_ERROR_NOT_FOUND;

@@ -1,4 +1,4 @@
-#import <XCTest/XCTest.h>
+@import XCTest;
 #import "JSONFetcher.h"
 #import "NSNumber+TimeExpiry.h"
 #import "KSDeferred.h"

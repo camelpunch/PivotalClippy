@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @class KSPromise;
 @protocol URLFetcher <NSObject>

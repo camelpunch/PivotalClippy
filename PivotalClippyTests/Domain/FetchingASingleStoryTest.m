@@ -1,4 +1,4 @@
-#import <XCTest/XCTest.h>
+@import XCTest;
 #import <OCMock/OCMock.h>
 #import "URLFetcher.h"
 #import "Backlog.h"

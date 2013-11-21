@@ -1,4 +1,4 @@
-#import <XCTest/XCTest.h>
+@import XCTest;
 #import "Preferences.h"
 #import "PreferencesRepository.h"
 #import "KSPromise.h"

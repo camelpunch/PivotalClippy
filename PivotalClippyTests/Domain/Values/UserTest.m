@@ -1,4 +1,4 @@
-#import <XCTest/XCTest.h>
+@import XCTest;
 #import "ValueSemantics.h"
 #import "User.h"
 

@@ -1,4 +1,4 @@
-#import <XCTest/XCTest.h>
+@import XCTest;
 #import "ResponseHandler.h"
 #import "KSDeferred.h"
 

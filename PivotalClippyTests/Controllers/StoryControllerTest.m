@@ -1,4 +1,4 @@
-#import <XCTest/XCTest.h>
+@import XCTest;
 #import <OCMock/OCMock.h>
 #import "StoryController.h"
 #import "StoryBuilder.h"

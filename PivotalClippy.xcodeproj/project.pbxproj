@@ -19,15 +19,12 @@
 		495240FC182A3017003F7F91 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 495240FB182A3017003F7F91 /* AppDelegate.m */; };
 		495240FF182A3017003F7F91 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495240FD182A3017003F7F91 /* MainMenu.xib */; };
 		49524101182A3017003F7F91 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49524100182A3017003F7F91 /* Images.xcassets */; };
-		49524108182A3017003F7F91 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49524107182A3017003F7F91 /* XCTest.framework */; };
-		49524109182A3017003F7F91 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495240E8182A3017003F7F91 /* Cocoa.framework */; };
 		49524111182A3017003F7F91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4952410F182A3017003F7F91 /* InfoPlist.strings */; };
 		4967A4EA182B4BED00A7C32F /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A4E9182B4BED00A7C32F /* OCMock.framework */; };
 		4967A4EE182B4C8E00A7C32F /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A4EC182B4C8E00A7C32F /* PreferencesController.m */; };
 		4967A4F3182B4CE400A7C32F /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4967A4F2182B4CE400A7C32F /* PreferencesController.xib */; };
 		4967A4F7182B4FFA00A7C32F /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4967A4E9182B4BED00A7C32F /* OCMock.framework */; };
 		4967A535182B7FE800A7C32F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A534182B7FE800A7C32F /* Security.framework */; };
-		4967A536182B7FFC00A7C32F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A534182B7FE800A7C32F /* Security.framework */; };
 		4967A547182CA59800A7C32F /* NSNumber+TimeExpiry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A546182CA59800A7C32F /* NSNumber+TimeExpiry.m */; };
 		4967A555182CAB9400A7C32F /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A552182CAB9400A7C32F /* SSKeychain.m */; };
 		4967A556182CAB9400A7C32F /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A554182CAB9400A7C32F /* SSKeychainQuery.m */; };
@@ -46,6 +43,7 @@
 		4967A59F182FB9FE00A7C32F /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A59B182FB9FE00A7C32F /* Preferences.m */; };
 		4967A5A1182FBA8F00A7C32F /* FetchingASingleStoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A5A0182FBA8F00A7C32F /* FetchingASingleStoryTest.m */; };
 		4967A5A3183061CA00A7C32F /* StoryControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A5A2183061CA00A7C32F /* StoryControllerTest.m */; };
+		496A6AC3183DD811002B04B0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A534182B7FE800A7C32F /* Security.framework */; };
 		4998E4861831F93F00EE18B5 /* KSDeferred.m in Sources */ = {isa = PBXBuildFile; fileRef = 4998E4831831F93F00EE18B5 /* KSDeferred.m */; };
 		4998E4871831F93F00EE18B5 /* KSPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 4998E4851831F93F00EE18B5 /* KSPromise.m */; };
 		49CDAC8318321B1100B3CCF9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDAC8218321B1100B3CCF9 /* User.m */; };
@@ -83,15 +81,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		491DA7A6183B96D200AD9149 /* Backlog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Backlog.h; sourceTree = "<group>"; };
+		491DA7A6183B96D200AD9149 /* Backlog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Backlog.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		491DA7A7183B96D200AD9149 /* Backlog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Backlog.m; sourceTree = "<group>"; };
-		491DA7A8183B96D200AD9149 /* PreferencesRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesRepository.h; sourceTree = "<group>"; };
+		491DA7A8183B96D200AD9149 /* PreferencesRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = PreferencesRepository.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		491DA7A9183B96D200AD9149 /* PreferencesRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesRepository.m; sourceTree = "<group>"; };
-		491DA7AA183B96D200AD9149 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
-		491DA7AB183B96D200AD9149 /* UserRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRepository.h; sourceTree = "<group>"; };
+		491DA7AA183B96D200AD9149 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Repository.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		491DA7AB183B96D200AD9149 /* UserRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = UserRepository.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		491DA7AC183B96D200AD9149 /* UserRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRepository.m; sourceTree = "<group>"; };
-		491DA7B1183B97CC00AD9149 /* PreferencesRepositoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesRepositoryTest.m; sourceTree = "<group>"; };
-		491DA7B2183B97CC00AD9149 /* UserRepositoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRepositoryTest.m; sourceTree = "<group>"; };
+		491DA7B1183B97CC00AD9149 /* PreferencesRepositoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PreferencesRepositoryTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		491DA7B2183B97CC00AD9149 /* UserRepositoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UserRepositoryTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		495240E5182A3017003F7F91 /* PivotalClippy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PivotalClippy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		495240E8182A3017003F7F91 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		495240EB182A3017003F7F91 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -115,56 +113,56 @@
 		4967A4EC182B4C8E00A7C32F /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		4967A4F2182B4CE400A7C32F /* PreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
 		4967A534182B7FE800A7C32F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		4967A545182CA59800A7C32F /* NSNumber+TimeExpiry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+TimeExpiry.h"; sourceTree = "<group>"; };
+		4967A545182CA59800A7C32F /* NSNumber+TimeExpiry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "NSNumber+TimeExpiry.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4967A546182CA59800A7C32F /* NSNumber+TimeExpiry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+TimeExpiry.m"; sourceTree = "<group>"; };
 		4967A551182CAB9400A7C32F /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		4967A552182CAB9400A7C32F /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
-		4967A553182CAB9400A7C32F /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		4967A553182CAB9400A7C32F /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SSKeychainQuery.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4967A554182CAB9400A7C32F /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
-		4967A55B182CB6E700A7C32F /* PreferencesControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesControllerTest.m; sourceTree = "<group>"; };
+		4967A55B182CB6E700A7C32F /* PreferencesControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PreferencesControllerTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4967A55D182CB79400A7C32F /* KeyDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyDetector.m; sourceTree = "<group>"; };
 		4967A55E182CB79400A7C32F /* KeyDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyDetector.h; sourceTree = "<group>"; };
-		4967A560182CB7BE00A7C32F /* StoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryController.h; sourceTree = "<group>"; };
+		4967A560182CB7BE00A7C32F /* StoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = StoryController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4967A561182CB7BE00A7C32F /* StoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryController.m; sourceTree = "<group>"; };
 		4967A563182CB81C00A7C32F /* Copier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Copier.m; sourceTree = "<group>"; };
 		4967A564182CB81C00A7C32F /* Copier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Copier.h; sourceTree = "<group>"; };
 		4967A566182CB8B300A7C32F /* Notifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifier.h; sourceTree = "<group>"; };
 		4967A567182CB8B300A7C32F /* Notifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notifier.m; sourceTree = "<group>"; };
-		4967A569182CB92600A7C32F /* CopierTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CopierTest.m; sourceTree = "<group>"; };
-		4967A56B182CBDAA00A7C32F /* KeyDetectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyDetectorTest.m; sourceTree = "<group>"; };
-		4967A56E182DDAF300A7C32F /* KeyboardStoryCopier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardStoryCopier.h; sourceTree = "<group>"; };
+		4967A569182CB92600A7C32F /* CopierTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CopierTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4967A56B182CBDAA00A7C32F /* KeyDetectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = KeyDetectorTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4967A56E182DDAF300A7C32F /* KeyboardStoryCopier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = KeyboardStoryCopier.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4967A56F182DDAF300A7C32F /* KeyboardStoryCopier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardStoryCopier.m; sourceTree = "<group>"; };
-		4967A58D182EE4AD00A7C32F /* NotifierTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifierTest.m; sourceTree = "<group>"; };
-		4967A592182F29E100A7C32F /* JSONFetcherTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONFetcherTest.m; sourceTree = "<group>"; };
+		4967A58D182EE4AD00A7C32F /* NotifierTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NotifierTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4967A592182F29E100A7C32F /* JSONFetcherTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = JSONFetcherTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4967A594182F2B7D00A7C32F /* JSONFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONFetcher.h; sourceTree = "<group>"; };
 		4967A595182F2B7D00A7C32F /* JSONFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONFetcher.m; sourceTree = "<group>"; };
 		4967A597182F42A500A7C32F /* URLFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLFetcher.h; sourceTree = "<group>"; };
 		4967A59A182FB9FE00A7C32F /* Story.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Story.m; sourceTree = "<group>"; };
 		4967A59B182FB9FE00A7C32F /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
-		4967A59C182FB9FE00A7C32F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
-		4967A59D182FB9FE00A7C32F /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Story.h; sourceTree = "<group>"; };
-		4967A5A0182FBA8F00A7C32F /* FetchingASingleStoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchingASingleStoryTest.m; sourceTree = "<group>"; };
-		4967A5A2183061CA00A7C32F /* StoryControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryControllerTest.m; sourceTree = "<group>"; };
+		4967A59C182FB9FE00A7C32F /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Preferences.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		4967A59D182FB9FE00A7C32F /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Story.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		4967A5A0182FBA8F00A7C32F /* FetchingASingleStoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FetchingASingleStoryTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4967A5A2183061CA00A7C32F /* StoryControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = StoryControllerTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4967A5A4183067B200A7C32F /* UserNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserNotification.h; sourceTree = "<group>"; };
 		4998E4821831F93F00EE18B5 /* KSDeferred.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSDeferred.h; sourceTree = "<group>"; };
 		4998E4831831F93F00EE18B5 /* KSDeferred.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSDeferred.m; sourceTree = "<group>"; };
-		4998E4841831F93F00EE18B5 /* KSPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPromise.h; sourceTree = "<group>"; };
+		4998E4841831F93F00EE18B5 /* KSPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = KSPromise.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4998E4851831F93F00EE18B5 /* KSPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPromise.m; sourceTree = "<group>"; };
-		4999B9001837FE020074EDF9 /* StoryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryBuilder.h; sourceTree = "<group>"; };
+		4999B9001837FE020074EDF9 /* StoryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = StoryBuilder.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4999B9011837FE020074EDF9 /* StoryBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryBuilder.m; sourceTree = "<group>"; };
-		49CDAC8118321B1100B3CCF9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		49CDAC8118321B1100B3CCF9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = User.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		49CDAC8218321B1100B3CCF9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		49CDAC8418321B3D00B3CCF9 /* UserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTest.m; sourceTree = "<group>"; };
-		49CDE17E183078CE00F92452 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		49CDAC8418321B3D00B3CCF9 /* UserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UserTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		49CDE17E183078CE00F92452 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Constants.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		49CDE17F183078CE00F92452 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		49DC499518398D6800C97608 /* ResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseHandler.h; sourceTree = "<group>"; };
 		49DC499618398D6800C97608 /* ResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseHandler.m; sourceTree = "<group>"; };
 		49DC499818398EC200C97608 /* URLResponseHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLResponseHandler.h; sourceTree = "<group>"; };
-		49DC49991839C03300C97608 /* ResponseHandlerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseHandlerTest.m; sourceTree = "<group>"; };
+		49DC49991839C03300C97608 /* ResponseHandlerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ResponseHandlerTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		49DF23F9182B3A6700147805 /* PreferencesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesTest.m; sourceTree = "<group>"; };
 		49DF23FA182B3A6700147805 /* StoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryTest.m; sourceTree = "<group>"; };
-		49DF23FB182B3A6700147805 /* ValueSemantics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueSemantics.h; sourceTree = "<group>"; };
-		49EF83BE18360E35004EDF2C /* EmptyPromises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyPromises.h; sourceTree = "<group>"; };
+		49DF23FB182B3A6700147805 /* ValueSemantics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ValueSemantics.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		49EF83BE18360E35004EDF2C /* EmptyPromises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = EmptyPromises.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		49EF83BF18360E35004EDF2C /* EmptyPromises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyPromises.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,9 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4967A536182B7FFC00A7C32F /* Security.framework in Frameworks */,
-				49524109182A3017003F7F91 /* Cocoa.framework in Frameworks */,
-				49524108182A3017003F7F91 /* XCTest.framework in Frameworks */,
+				496A6AC3183DD811002B04B0 /* Security.framework in Frameworks */,
 				4967A4EA182B4BED00A7C32F /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -642,6 +638,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -679,6 +676,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;

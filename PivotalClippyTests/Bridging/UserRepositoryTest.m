@@ -1,4 +1,4 @@
-#import <XCTest/XCTest.h>
+@import XCTest;
 #import "UserRepository.h"
 #import "User.h"
 #import "EmptyPromises.h"

@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "URLFetcher.h"
 #import "URLResponseHandler.h"
 

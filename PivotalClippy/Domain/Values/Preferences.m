@@ -1,5 +1,5 @@
 #import "Preferences.h"
-#import <objc/message.h>
+@import ObjectiveC.message;
 
 @interface Preferences ()
 
