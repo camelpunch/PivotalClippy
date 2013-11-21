@@ -42,7 +42,7 @@
                                                 notifier:nil
                                           userRepository:userRepo
                                                  backlog:backlogMock];
-    [controller copyCurrentUsersStory];
+    [controller initiateCopy];
 
     [[backlogMock expect] fetchCurrentStoryForUser:user];
     [userRepo.fetchDeferred resolveWithValue:user];
@@ -56,7 +56,7 @@
                                                 notifier:nil
                                           userRepository:userRepo
                                                  backlog:backlog];
-    [controller copyCurrentUsersStory];
+    [controller initiateCopy];
     [userRepo.fetchDeferred resolveWithValue:nil];
 
     [[copierMock expect] put:story.storyID];
@@ -71,7 +71,7 @@
                                                 notifier:userNotifierMock
                                           userRepository:userRepo
                                                  backlog:backlog];
-    [controller copyCurrentUsersStory];
+    [controller initiateCopy];
     [userRepo.fetchDeferred resolveWithValue:nil];
 
     story = [[Story alloc] initWithStoryID:@98765
@@ -113,7 +113,7 @@
                                                 notifier:userNotifierMock
                                           userRepository:userRepo
                                                  backlog:backlog];
-    [controller copyCurrentUsersStory];
+    [controller initiateCopy];
 
     NSError *error = [NSError errorWithDomain:@"fakedomain"
                                          code:0

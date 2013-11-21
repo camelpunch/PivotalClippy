@@ -53,7 +53,7 @@
 {
     [NSEvent addGlobalMonitorForEventsMatchingMask:NSKeyDownMask
                                            handler:[keyDetector handler:^{
-        [storyController copyCurrentUsersStory];
+        [storyController initiateCopy];
     }]];
 }
 

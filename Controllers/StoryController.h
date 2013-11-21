@@ -11,6 +11,6 @@
       userRepository:(id<Repository>)aUserRepo
              backlog:(id<StoryRepository>)aBacklog;
 
-- (void)copyCurrentUsersStory;
+- (void)initiateCopy;
 
 @end

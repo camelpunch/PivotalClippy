@@ -29,7 +29,7 @@
     return self;
 }
 
-- (void)copyCurrentUsersStory
+- (void)initiateCopy
 {
     __weak id<StoryRepository> backlog = self.backlog;
     __weak id<Repository> copier = self.copier;
