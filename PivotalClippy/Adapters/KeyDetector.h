@@ -3,8 +3,9 @@
 @interface KeyDetector : NSObject
 
 - (id)initWithKey:(NSString *)aKey
-        modifiers:(NSUInteger)someModifiers;
+        modifiers:(NSUInteger)someModifiers
+    whenActivated:(void (^)())block;
 
-- (void (^)(NSEvent *))handler:(void(^)())handlerBlock;
+- (void)handle:(NSEvent *)anEvent;
 
 @end

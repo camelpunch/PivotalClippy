@@ -44,7 +44,10 @@
 
         NSUInteger highSmash = NSCommandKeyMask | NSControlKeyMask | NSAlternateKeyMask | NSShiftKeyMask;
         keyDetector = [[KeyDetector alloc] initWithKey:@"S"
-                                             modifiers:highSmash];
+                                             modifiers:highSmash
+                                         whenActivated:^{
+                                             [storyController initiateCopy];
+                                         }];
     }
     return self;
 }
@@ -52,9 +55,9 @@
 - (void)monitorKeyPress
 {
     [NSEvent addGlobalMonitorForEventsMatchingMask:NSKeyDownMask
-                                           handler:[keyDetector handler:^{
-        [storyController initiateCopy];
-    }]];
+                                           handler:^(NSEvent *event) {
+                                               [keyDetector handle:event];
+                                           }];
 }
 
 @end

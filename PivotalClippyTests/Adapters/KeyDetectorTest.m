@@ -10,31 +10,40 @@
 
 - (void)testCallsBlockWhenConfiguredKeyIsPressed
 {
-    detector = [[KeyDetector alloc] initWithKey:@"S"
-                                      modifiers:self.smash];
-
     __block BOOL called = NO;
-    [detector handler:^{ called = YES; }]([self syntheticKeyPress:@"S" modifiers:self.smash]);
+    detector = [[KeyDetector alloc] initWithKey:@"S"
+                                      modifiers:self.smash
+                                  whenActivated:^{
+                                      called = YES;
+                                  }];
+
+    [detector handle:[self syntheticKeyPress:@"S" modifiers:self.smash]];
 
     XCTAssert(called);
 }
 
 - (void)testDoesntCallBlockWhenDifferentKeyIsPressed
 {
-    detector = [[KeyDetector alloc] initWithKey:@"S"
-                                      modifiers:NSCommandKeyMask];
     __block BOOL called = NO;
-    [detector handler:^{ called = YES; }]([self syntheticKeyPress:@"D" modifiers:NSCommandKeyMask]);
+    detector = [[KeyDetector alloc] initWithKey:@"S"
+                                      modifiers:NSCommandKeyMask
+                                  whenActivated:^{
+                                      called = YES;
+                                  }];
+    [detector handle:[self syntheticKeyPress:@"D" modifiers:NSCommandKeyMask]];
 
     XCTAssertFalse(called);
 }
 
 - (void)testDoesntCallBlockWhenDifferentModifiersAreHeld
 {
-    detector = [[KeyDetector alloc] initWithKey:@"S"
-                                      modifiers:NSCommandKeyMask];
     __block BOOL called = NO;
-    [detector handler:^{ called = YES; }]([self syntheticKeyPress:@"S" modifiers:NSControlKeyMask]);
+    detector = [[KeyDetector alloc] initWithKey:@"S"
+                                      modifiers:NSCommandKeyMask
+                                  whenActivated:^{
+                                      called = YES;
+                                  }];
+    [detector handle:[self syntheticKeyPress:@"S" modifiers:NSControlKeyMask]];
 
     XCTAssertFalse(called);
 }

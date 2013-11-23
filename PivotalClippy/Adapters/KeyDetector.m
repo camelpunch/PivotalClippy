@@ -1,29 +1,32 @@
 #import "KeyDetector.h"
 
-@implementation KeyDetector {
-    NSString *key;
-    NSUInteger modifiers;
-}
+@interface KeyDetector ()
+@property (nonatomic) NSString *key;
+@property (nonatomic) NSUInteger modifiers;
+@property (nonatomic, copy) void (^whenActivated)(NSEvent *);
+@end
+
+@implementation KeyDetector
 
 - (id)initWithKey:(NSString *)aKey
         modifiers:(NSUInteger)someModifiers
+    whenActivated:(void (^)())block
 {
     self = [super init];
     if (self) {
-        key = aKey;
-        modifiers = someModifiers;
+        self.key = aKey;
+        self.modifiers = someModifiers;
+        self.whenActivated = block;
     }
     return self;
 }
 
-- (void (^)(NSEvent *))handler:(void(^)())handlerBlock
+- (void)handle:(NSEvent *)anEvent
 {
-    return ^(NSEvent *incomingEvent) {
-        if ((incomingEvent.modifierFlags & modifiers) == modifiers &&
-            [incomingEvent.charactersIgnoringModifiers isEqualToString:key]) {
-            handlerBlock();
-        }
-    };
+    if ((anEvent.modifierFlags & self.modifiers) == self.modifiers &&
+        [anEvent.charactersIgnoringModifiers isEqualToString:self.key]) {
+        self.whenActivated(anEvent);
+    }
 }
 
 #pragma mark - NSObject
