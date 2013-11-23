@@ -20,10 +20,8 @@
 		495240FF182A3017003F7F91 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 495240FD182A3017003F7F91 /* MainMenu.xib */; };
 		49524101182A3017003F7F91 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49524100182A3017003F7F91 /* Images.xcassets */; };
 		49524111182A3017003F7F91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4952410F182A3017003F7F91 /* InfoPlist.strings */; };
-		4967A4EA182B4BED00A7C32F /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A4E9182B4BED00A7C32F /* OCMock.framework */; };
 		4967A4EE182B4C8E00A7C32F /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A4EC182B4C8E00A7C32F /* PreferencesController.m */; };
 		4967A4F3182B4CE400A7C32F /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4967A4F2182B4CE400A7C32F /* PreferencesController.xib */; };
-		4967A4F7182B4FFA00A7C32F /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4967A4E9182B4BED00A7C32F /* OCMock.framework */; };
 		4967A535182B7FE800A7C32F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A534182B7FE800A7C32F /* Security.framework */; };
 		4967A547182CA59800A7C32F /* NSNumber+TimeExpiry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A546182CA59800A7C32F /* NSNumber+TimeExpiry.m */; };
 		4967A555182CAB9400A7C32F /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A552182CAB9400A7C32F /* SSKeychain.m */; };
@@ -44,6 +42,7 @@
 		4967A5A1182FBA8F00A7C32F /* FetchingASingleStoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A5A0182FBA8F00A7C32F /* FetchingASingleStoryTest.m */; };
 		4967A5A3183061CA00A7C32F /* StoryControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4967A5A2183061CA00A7C32F /* StoryControllerTest.m */; };
 		496A6AC3183DD811002B04B0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967A534182B7FE800A7C32F /* Security.framework */; };
+		4982FF2D184140D10009B81B /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4982FF2C184140D10009B81B /* OCMock.framework */; };
 		4998E4861831F93F00EE18B5 /* KSDeferred.m in Sources */ = {isa = PBXBuildFile; fileRef = 4998E4831831F93F00EE18B5 /* KSDeferred.m */; };
 		4998E4871831F93F00EE18B5 /* KSPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 4998E4851831F93F00EE18B5 /* KSPromise.m */; };
 		49CDAC8318321B1100B3CCF9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CDAC8218321B1100B3CCF9 /* User.m */; };
@@ -74,7 +73,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				4967A4F7182B4FFA00A7C32F /* OCMock.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,10 +103,8 @@
 		495240FE182A3017003F7F91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		49524100182A3017003F7F91 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		49524106182A3017003F7F91 /* PivotalClippyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PivotalClippyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49524107182A3017003F7F91 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4952410E182A3017003F7F91 /* PivotalClippyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PivotalClippyTests-Info.plist"; sourceTree = "<group>"; };
 		49524110182A3017003F7F91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4967A4E9182B4BED00A7C32F /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
 		4967A4EB182B4C8E00A7C32F /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		4967A4EC182B4C8E00A7C32F /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		4967A4F2182B4CE400A7C32F /* PreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
@@ -144,6 +140,7 @@
 		4967A5A0182FBA8F00A7C32F /* FetchingASingleStoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FetchingASingleStoryTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4967A5A2183061CA00A7C32F /* StoryControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = StoryControllerTest.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4967A5A4183067B200A7C32F /* UserNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserNotification.h; sourceTree = "<group>"; };
+		4982FF2C184140D10009B81B /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
 		4998E4821831F93F00EE18B5 /* KSDeferred.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSDeferred.h; sourceTree = "<group>"; };
 		4998E4831831F93F00EE18B5 /* KSDeferred.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSDeferred.m; sourceTree = "<group>"; };
 		4998E4841831F93F00EE18B5 /* KSPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = KSPromise.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -180,8 +177,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4982FF2D184140D10009B81B /* OCMock.framework in Frameworks */,
 				496A6AC3183DD811002B04B0 /* Security.framework in Frameworks */,
-				4967A4EA182B4BED00A7C32F /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,9 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				4967A534182B7FE800A7C32F /* Security.framework */,
-				4967A4E9182B4BED00A7C32F /* OCMock.framework */,
 				495240E8182A3017003F7F91 /* Cocoa.framework */,
-				49524107182A3017003F7F91 /* XCTest.framework */,
 				495240EA182A3017003F7F91 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -289,6 +284,7 @@
 				491DA7B0183B976B00AD9149 /* Bridging */,
 				49DF23F7182B39DA00147805 /* Controllers */,
 				4967A598182FB8E100A7C32F /* Domain */,
+				4982FF2B184140A30009B81B /* Frameworks */,
 				4967A544182CA55300A7C32F /* Helpers */,
 				4952410D182A3017003F7F91 /* Supporting Files */,
 			);
@@ -417,6 +413,14 @@
 				49CDAC8218321B1100B3CCF9 /* User.m */,
 			);
 			path = Values;
+			sourceTree = "<group>";
+		};
+		4982FF2B184140A30009B81B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4982FF2C184140D10009B81B /* OCMock.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		49DF23F7182B39DA00147805 /* Controllers */ = {
@@ -736,7 +740,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
-					/Users/andrew/workspace/PivotalClippy,
+					"\"$(PROJECT_DIR)/PivotalClippyTests/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PivotalClippy/PivotalClippy-Prefix.pch";
@@ -759,7 +763,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
-					/Users/andrew/workspace/PivotalClippy,
+					"\"$(PROJECT_DIR)/PivotalClippyTests/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PivotalClippy/PivotalClippy-Prefix.pch";
