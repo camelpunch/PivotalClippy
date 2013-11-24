@@ -43,7 +43,7 @@
               if (stories.count > 0) {
                   [deferred resolveWithValue:stories[0]];
               } else {
-                  [deferred rejectWithError:[NSError errorWithDomain:@"" code:0 userInfo:@{}]];
+                  [deferred rejectWithError:[weakSelf emptyResponseError]];
               }
 
               return nil;
@@ -71,6 +71,13 @@
 }
 
 #pragma mark - Private
+
+- (NSError *)emptyResponseError
+{
+    return [NSError errorWithDomain:@"com.camelpunch.www"
+                               code:0
+                           userInfo:@{NSLocalizedDescriptionKey: @"No stories in progress"}];
+}
 
 - (NSURL *)urlWithProjectID:(NSString *)projectID
 {

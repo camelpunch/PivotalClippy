@@ -98,7 +98,7 @@
 
 - (void)testFailureToFetchStoryShowsAlert
 {
-    [self assertShowsError:@"Couldn't fetch Tracker story"
+    [self assertShowsError:@"No stories in progress"
                      block:^(NSError *error) {
         [userRepo.fetchDeferred resolveWithValue:user];
         [backlog.deferred rejectWithError:error];
@@ -117,7 +117,7 @@
 
     NSError *error = [NSError errorWithDomain:@"fakedomain"
                                          code:0
-                                     userInfo:@{}];
+                                     userInfo:@{NSLocalizedDescriptionKey: subtitle}];
     [[userNotifierMock expect]
      notifyWithTitle:@"Could not copy Tracker Story ID"
      subtitle:subtitle];

@@ -103,6 +103,8 @@
     [deferredURLFetch resolveWithValue:@[]];
 
     XCTAssert(storyPromise.error);
+    XCTAssertEqualObjects(storyPromise.error.localizedDescription,
+                          @"No stories in progress");
 }
 
 - (void)testPassesErrorThroughWhenStoriesResourceNotFound

@@ -59,7 +59,7 @@
 
           error:^id(NSError *error) {
               [notifier notifyWithTitle:@"Could not copy Tracker Story ID"
-                               subtitle:@"Couldn't fetch Tracker story"];
+                               subtitle:error.localizedDescription];
               return nil;
           }];
 
